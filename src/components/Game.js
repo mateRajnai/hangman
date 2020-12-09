@@ -1,13 +1,19 @@
 import React from 'react'
+import styled from "styled-components";
 
 const Game = () => {
 
 
     return (
-        <div className="game-container">
+        <StyleWrapper id="game-container">
             Game
-        </div>
+        </StyleWrapper>
     );
 }
 
 export default Game;
+
+const StyleWrapper = styled.div`
+    flex: 10;
+`;
+

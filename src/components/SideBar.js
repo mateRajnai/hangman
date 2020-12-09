@@ -1,12 +1,17 @@
 import React from 'react';
+import styled from "styled-components";
 
 const SideBar = () => {
 
     return (
-        <div className="side-bar">
+        <StyleWrapper id="side-bar">
             Sidebar
-        </div>
+        </StyleWrapper>
     );
 }
 
 export default SideBar;
+
+const StyleWrapper = styled.div`
+    flex: 3;
+`;
