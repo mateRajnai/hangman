@@ -6,6 +6,7 @@ const Game = () => {
 
     return (
         <StyleWrapper id="game-container">
+            
             Game
         </StyleWrapper>
     );

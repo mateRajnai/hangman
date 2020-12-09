@@ -13,5 +13,6 @@ const SideBar = () => {
 export default SideBar;
 
 const StyleWrapper = styled.div`
+display: none;
     flex: 3;
 `;
