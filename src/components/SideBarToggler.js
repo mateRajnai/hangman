@@ -1,15 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styled from 'styled-components';
+import {VocabularyContext} from "../context/VocabularyContext"
 
 const SideBarToggler = () => {
 
-    const showVocabularies = () => {
-
-    }
+    const {showVocabularies} = useContext(VocabularyContext);
 
     return (
     <StyleWrapper id="side-bar-toggler" className="styled-div">
-        <button type="button" onclick={showVocabularies}>Show/hide vocabularies</button>
+        <button type="button" onClick={showVocabularies}>Show/hide vocabularies</button>
     </StyleWrapper>
     )
 }
