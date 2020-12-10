@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
 import styled from "styled-components";
+import {VocabularyContext} from '../context/VocabularyContext'
 
 const SideBar = () => {
+
+    const {vocabularySidebarIsCollapsed} = useContext(VocabularyContext);
 
     return (
         <ProSidebar>
