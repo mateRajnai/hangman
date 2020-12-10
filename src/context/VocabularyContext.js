@@ -7,7 +7,7 @@ export const VocabularyProvider = (props) => {
     const [vocabularySidebarIsCollapsed, setVocabularySidebarIsCollapsed] = useState(true);
 
     const toggleVocabularies = () => {
-        setVocabularySidebarIsCollapsed((!vocabularySidebarIsCollapsed));
+        setVocabularySidebarIsCollapsed(!vocabularySidebarIsCollapsed);
     }
 
 
