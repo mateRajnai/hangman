@@ -7,10 +7,15 @@ export const VocabularyProvider = (props) => {
 
     const {vocabularySidebarIsCollapsed, setVocabularySidebarIsCollapsed} = useState(true);
 
+    const showVocabularies = () => {
+        
+    }
+
 
     return (
         <VocabularyContext.Provider value={{
-            vocabularySidebarIsCollapsed
+            vocabularySidebarIsCollapsed,
+            showVocabularies
            
         }}>
             {props.children}
