@@ -15,7 +15,6 @@ export const VocabularyProvider = (props) => {
         <VocabularyContext.Provider value={{
             vocabularySidebarIsCollapsed,
             toggleVocabularies
-           
         }}>
             {props.children}
         </VocabularyContext.Provider>
