@@ -11,9 +11,9 @@ const Game = () => {
     return (
         <GameContainer id="game-container" className="styled-div">
             <FirstSubContainerVertically id="first-sub-container-vertically" className="styled-div">
-                <Drawing/>
-                <WrongLetters/>
                 <SideBarToggler/>
+                <WrongLetters/>
+                <Drawing/>
             </FirstSubContainerVertically>
             <SecondSubContainerVertically id="second-sub-container-vertically" className="styled-div">
                 <CorrectLetters/>

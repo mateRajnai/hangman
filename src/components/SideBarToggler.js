@@ -1,7 +1,12 @@
-import React from 'react'
+import React from 'react';
+import styled from 'styled-components';
 
 const SideBarToggler = () => {
-    return (<div id="side-bar-toggler"></div>)
+    return (<StyleWrapper id="side-bar-toggler" className="styled-div"></StyleWrapper>)
 }
 
 export default SideBarToggler;
+
+const StyleWrapper = styled.div`
+    flex: 1;
+`;

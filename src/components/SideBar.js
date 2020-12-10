@@ -4,7 +4,7 @@ import styled from "styled-components";
 const SideBar = () => {
 
     return (
-        <StyleWrapper id="side-bar">
+        <StyleWrapper id="side-bar" className="styled-div">
             Sidebar
         </StyleWrapper>
     );
