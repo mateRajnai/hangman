@@ -19,9 +19,9 @@ export default SideBarToggler;
 
 const StyleWrapper = styled.div`
     flex: 1;
-
     button {
         width: 25%;
+        min-width: 78px;
         height: 70%;
     }
 `;
