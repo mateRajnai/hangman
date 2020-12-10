@@ -6,8 +6,8 @@ export const LettersProvider = (props) => {
 
     const [guessedLetter, setGuessedLetter] = useState("");
 
-    const addToGuessedLetters = (event) => {
-        console.log( event.target.getAttribute("data-guessedLetter"))
+    const addToGuessedLetters = () => {
+        console.log( guessedLetter)
     }
 
 
