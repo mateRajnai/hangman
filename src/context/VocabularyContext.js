@@ -4,21 +4,17 @@ export const VocabularyContext = React.createContext();
 
 export const VocabularyProvider = (props) => {
 
-
     const [vocabularySidebarIsCollapsed, setVocabularySidebarIsCollapsed] = useState(true);
 
-    // rename: toggle
-    const showVocabularies = () => {
+    const toggleVocabularies = () => {
         setVocabularySidebarIsCollapsed((!vocabularySidebarIsCollapsed));
     }
-
-
 
 
     return (
         <VocabularyContext.Provider value={{
             vocabularySidebarIsCollapsed,
-            showVocabularies
+            toggleVocabularies
            
         }}>
             {props.children}

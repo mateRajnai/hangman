@@ -8,7 +8,7 @@ const SideBar = () => {
 
     const {vocabularySidebarIsCollapsed} = useContext(VocabularyContext);
 
-    useEffect(() => {
+    useEffect(() => {   
     }, [vocabularySidebarIsCollapsed])
 
 
