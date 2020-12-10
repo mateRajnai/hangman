@@ -1,17 +1,17 @@
-import React, {useContext} from 'react';
+import React, {useState, useContext} from 'react';
 import styled from 'styled-components';
 import {LettersContext} from '../context/LettersContext';
 
 const GuessedLetter = () => {
 
-
-    const {guessedLetter, setGuessedLetter, addToGuessedLetters} = useContext(LettersContext);
+    const [letter, setLetter] = useState("");
+    const {addToGuessedLetters} = useContext(LettersContext);
 
 
     return (
         <StyleWrapper id="guessed-letter" className="styled-div">
-                <input type="text" value={guessedLetter} onChange={e => setGuessedLetter(e.target.value)}></input>
-                <button type="button" onClick={addToGuessedLetters}>Guess letter!</button>
+                <input type="text" value={letter} onChange={e => setLetter(e.target.value)}></input>
+                <button type="button" data-l={letter} onClick={e => addToGuessedLetters(e)}>Guess letter!</button>
         </StyleWrapper>
     )
 

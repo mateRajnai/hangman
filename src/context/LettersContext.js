@@ -1,21 +1,17 @@
-import React,{useState} from 'react';
+import React from 'react';
 
 export const LettersContext = React.createContext();
 
 export const LettersProvider = (props) => {
 
-    const [guessedLetter, setGuessedLetter] = useState("");
-
-    const addToGuessedLetters = () => {
-        console.log( guessedLetter)
+    const addToGuessedLetters = (e) => {
+        console.log( e.target.getAttribute("data-l"));
     }
 
 
     return (
         <LettersContext.Provider value={{
-            addToGuessedLetters,
-            guessedLetter, 
-            setGuessedLetter
+            addToGuessedLetters
         }} >
             {props.children}
         </LettersContext.Provider>
