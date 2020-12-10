@@ -6,14 +6,14 @@ export const LettersProvider = (props) => {
 
     const [guessedLetter, setGuessedLetter] = useState("");
 
-    const guessLetter = (event) => {
+    const addToGuessedLetters = (event) => {
         console.log( event.target.getAttribute("data-guessedLetter"))
     }
 
 
     return (
         <LettersContext.Provider value={{
-            guessLetter,
+            addToGuessedLetters,
             guessedLetter, 
             setGuessedLetter
         }} >
