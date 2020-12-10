@@ -28,6 +28,7 @@ const GameContainer = styled.div`
     flex: 10;
     display: flex;
     flex-direction: column;
+    background-color: #383961;
 `;
 
 const FirstSubContainerVertically = styled.div`
