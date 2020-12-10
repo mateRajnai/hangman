@@ -10,3 +10,7 @@ body,
   padding: 0;
   box-sizing: border-box;
 }
+
+.flag-button {
+  margin: 40px 0;
+}
