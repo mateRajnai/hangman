@@ -1,11 +1,16 @@
-import React from 'react'
+import React from 'react';
+import styled from 'styled-components';
 
 const CorrectLetters = () => {
     return (
-    <div id="correct-letters">
+    <StyleWrapper id="correct-letters" className="styled-div">
 
-    </div>
+    </StyleWrapper>
     )
 }
 
 export default CorrectLetters;
+
+const StyleWrapper = styled.div`
+    flex: 4;
+`;
