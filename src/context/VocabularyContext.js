@@ -19,7 +19,6 @@ export const VocabularyProvider = (props) => {
         } else if (vocabulary === "german") {
             setGeneratedWord("flagge")
         }
-
     }
 
 

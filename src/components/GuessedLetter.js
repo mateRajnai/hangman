@@ -6,7 +6,10 @@ const GuessedLetter = () => {
 
     return (
         <StyleWrapper id="guessed-letter" className="styled-div">
-
+            <form>
+                <input type="text" value=""></input>
+                <button type="submit">Guess letter!</button>
+            </form>
         </StyleWrapper>
     )
 
