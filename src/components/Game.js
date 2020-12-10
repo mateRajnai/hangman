@@ -34,6 +34,10 @@ const FirstSubContainerVertically = styled.div`
     flex: 7;
     display: flex;
     flex-direction: column;
+    
+    @media screen and (min-width: 768px) {
+        flex-direction: row-reverse;
+    }
 `;
 
 const SecondSubContainerVertically = styled.div`
