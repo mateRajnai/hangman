@@ -10,11 +10,19 @@ export const VocabularyProvider = (props) => {
         setVocabularySidebarIsCollapsed(!vocabularySidebarIsCollapsed);
     }
 
+    const getWordFromVocabulary = (event) => {
+        event.stopPropagation();
+        console.log(event);
+        console.log(event.target.getAttribute("vocabulary"));
+
+    }
+
 
     return (
         <VocabularyContext.Provider value={{
             vocabularySidebarIsCollapsed,
-            toggleVocabularies
+            toggleVocabularies,
+            getWordFromVocabulary
         }}>
             {props.children}
         </VocabularyContext.Provider>

@@ -8,7 +8,7 @@ import germanFlag from '../images/german_flag.png';
 
 const SideBar = () => {
 
-    const {vocabularySidebarIsCollapsed} = useContext(VocabularyContext);
+    const {vocabularySidebarIsCollapsed, getWordFromVocabulary} = useContext(VocabularyContext);
 
     useEffect(() => {   
     }, [vocabularySidebarIsCollapsed])
@@ -19,13 +19,13 @@ const SideBar = () => {
             <Menu iconShape="square">
                 <h1>Vocabularies</h1>
                 <MenuItem >
-                    <button type="button" className="flag-button" vocabulary="english">
-                        <StyledFlag src={englishFlag} alt="English vocabulary"></StyledFlag>
+                    <button type="button" className="flag-button"  onClick={getWordFromVocabulary}>
+                        <StyledFlag src={englishFlag} alt="English vocabulary" data-vocabulary="english"></StyledFlag>
                     </button>
                     </MenuItem>                
                 <MenuItem >
-                    <button type="button" className="flag-button" vocabulary="german">
-                        <StyledFlag src={germanFlag} alt="German vocabulary"></StyledFlag>
+                    <button type="button" className="flag-button" onClick={getWordFromVocabulary}>
+                        <StyledFlag src={germanFlag} alt="German vocabulary" data-vocabulary="german"></StyledFlag>
                     </button>
                 </MenuItem>
             </Menu>
