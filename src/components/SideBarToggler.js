@@ -4,12 +4,12 @@ import styled from 'styled-components';
 const SideBarToggler = () => {
 
     const showVocabularies = () => {
-        
+
     }
 
     return (
     <StyleWrapper id="side-bar-toggler" className="styled-div">
-        <button type="button" onclick={showVocabularies}>Change vocabulary</button>
+        <button type="button" onclick={showVocabularies}>Show/hide vocabularies</button>
     </StyleWrapper>
     )
 }
