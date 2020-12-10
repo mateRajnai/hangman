@@ -7,7 +7,7 @@ export const LettersProvider = (props) => {
     const [guessedLetter, setGuessedLetter] = useState("");
 
     const getGuessedLetter = (e) => {
-        setGuessedLetter(e.target.getAttribute("data-l"));
+        setGuessedLetter(e.target.getAttribute("data-guessed-letter"));
     }
 
     useEffect(() => {
