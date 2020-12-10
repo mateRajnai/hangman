@@ -1,15 +1,17 @@
-import React from 'react';
+import React, {useState, useContext} from 'react';
 import styled from 'styled-components';
+import {LettersContext} from '../context/LettersContext';
 
 const GuessedLetter = () => {
 
 
+    const {guessedLetter, setGuessedLetter, guessLetter} = useContext(LettersContext);
+
+
     return (
         <StyleWrapper id="guessed-letter" className="styled-div">
-            <form>
-                <input type="text" value=""></input>
-                <button type="submit">Guess letter!</button>
-            </form>
+                <input type="text" value={guessedLetter} onChange={e => setGuessedLetter(e.target.value)}></input>
+                <button type="button" data-guessedLetter={guessedLetter} onClick={guessedLetter => {guessLetter(guessedLetter)}}>Guess letter!</button>
         </StyleWrapper>
     )
 
