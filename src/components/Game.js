@@ -4,6 +4,7 @@ import Drawing from './Drawing';
 import WrongLetters from './WrongLetters';
 import SideBarToggler from './SideBarToggler';
 import CorrectLetters from './CorrectLetters';
+import GuessedLetter from './GuessedLetter';
 
 const Game = () => {
 
@@ -16,6 +17,7 @@ const Game = () => {
                 <Drawing/>
             </FirstSubContainerVertically>
             <SecondSubContainerVertically id="second-sub-container-vertically" className="styled-div">
+                <GuessedLetter/>
                 <CorrectLetters/>
             </SecondSubContainerVertically>
         </GameContainer>
