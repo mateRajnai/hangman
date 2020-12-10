@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
 import styled from "styled-components";
@@ -8,8 +8,12 @@ const SideBar = () => {
 
     const {vocabularySidebarIsCollapsed} = useContext(VocabularyContext);
 
+    useEffect(() => {
+    }, [vocabularySidebarIsCollapsed])
+
+
     return (
-        <ProSidebar>
+        <ProSidebar collapsed={vocabularySidebarIsCollapsed}>
             <Menu iconShape="square">
                 <MenuItem >Dashboard</MenuItem>
                 <SubMenu title="Components" >
