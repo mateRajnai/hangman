@@ -1,5 +1,5 @@
 import React, {useContext, useEffect} from 'react';
-import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
+import { ProSidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
 import styled from 'styled-components';
 import {VocabularyContext} from '../context/VocabularyContext';

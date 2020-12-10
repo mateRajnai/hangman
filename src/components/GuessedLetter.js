@@ -20,4 +20,10 @@ export default GuessedLetter;
 
 const StyleWrapper = styled.div`
     flex: 1;
+
+    input {
+        width: 20%;
+        min-width: 20%;
+        height: 70%;
+    }
 `;
