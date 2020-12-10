@@ -33,12 +33,12 @@ const GameContainer = styled.div`
 const FirstSubContainerVertically = styled.div`
     flex: 7;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 `;
 
 const SecondSubContainerVertically = styled.div`
     flex: 3;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 `;
 
