@@ -5,15 +5,20 @@ export const VocabularyContext = React.createContext();
 export const VocabularyProvider = (props) => {
 
     const [vocabularySidebarIsCollapsed, setVocabularySidebarIsCollapsed] = useState(true);
+    const [generatedWord, setGeneratedWord] = useState();
 
     const toggleVocabularies = () => {
         setVocabularySidebarIsCollapsed(!vocabularySidebarIsCollapsed);
     }
 
+    // TODO: refactor
     const getWordFromVocabulary = (event) => {
-        event.stopPropagation();
-        console.log(event);
-        console.log(event.target.getAttribute("vocabulary"));
+        const vocabulary = event.target.getAttribute("data-vocabulary");
+        if (vocabulary === "english") {
+            setGeneratedWord("flag")
+        } else if (vocabulary === "german") {
+            setGeneratedWord("flagge")
+        }
 
     }
 
@@ -22,7 +27,8 @@ export const VocabularyProvider = (props) => {
         <VocabularyContext.Provider value={{
             vocabularySidebarIsCollapsed,
             toggleVocabularies,
-            getWordFromVocabulary
+            getWordFromVocabulary,
+            generatedWord
         }}>
             {props.children}
         </VocabularyContext.Provider>
