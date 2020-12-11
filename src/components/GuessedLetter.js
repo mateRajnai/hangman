@@ -5,13 +5,13 @@ import {LettersContext} from '../context/LettersContext';
 const GuessedLetter = () => {
 
     const [letter, setLetter] = useState("");
-    const {getGuessedLetter} = useContext(LettersContext);
+    const {setGuessedLetter} = useContext(LettersContext);
 
 
     return (
         <StyleWrapper id="guessed-letter" className="styled-div">
                 <input type="text" value={letter} onChange={e => setLetter(e.target.value)}></input>
-                <button type="button" data-guessed-letter={letter} onClick={e => getGuessedLetter(e)}>Guess letter!</button>
+                <button type="button" onClick={e => setGuessedLetter(letter)}>Guess letter!</button>
         </StyleWrapper>
     )
 
