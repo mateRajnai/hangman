@@ -28,10 +28,18 @@ export default GuessedLetter;
 
 const StyleWrapper = styled.div`
     flex: 1;
+    position: relative;
 
     input {
-        width: 20%;
-        min-width: 20%;
-        height: 70%;
+        width: 50px;
+        height: 24px;
+        position: absolute;
+    }
+
+    button {
+        margin: 0 50px;
+        width: 80px;
+        height: 24px;
+        position: absolute;
     }
 `;
