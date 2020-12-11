@@ -1,11 +1,13 @@
 import React from 'react';
 
-const CorrectLetter = () => {
+const CorrectLetter = (props) => {
 
 
     return (
-        <div></div>
+    <div>{console.log(props.letter)}</div>
     );
 };
 
 export default CorrectLetter;
+
+
