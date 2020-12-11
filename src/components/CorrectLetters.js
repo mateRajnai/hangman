@@ -21,5 +21,5 @@ export default CorrectLetters;
 
 const StyleWrapper = styled.div`
     flex: 4;
-    display: block;
+    display: flex;
 `;
