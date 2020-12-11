@@ -10,11 +10,17 @@ export const LettersProvider = (props) => {
     const [correctLetters, setCorrectLetters] = useState([]);
     const [wrongLetters, setWrongLetters] = useState([]);
 
-    const saveGuessedLetter = (e) => {
+    const checkGuessedLetterWasAlreadyGuessed = (e) => {
         const guessedLetter = e.target.getAttribute("data-guessed-letter");
-        let isWrongLetter = true;
         console.log(guessedLetter);
-        
+        const isAlreadyGuessed = wrongLetters.includes(guessedLetter) || correctLetters.includes(guessedLetter);
+        if (!isAlreadyGuessed) 
+            saveGuessedLetter(guessedLetter);
+    }
+
+
+    const saveGuessedLetter = (guessedLetter) => {
+        let isWrongLetter = true;
         let correctLettersToBeUpdated = [...correctLetters];
         for (let i = 0; i < generatedWord.length; i++) {
             if (generatedWord.charAt(i) === guessedLetter) {
@@ -38,7 +44,8 @@ export const LettersProvider = (props) => {
 
     return (
         <LettersContext.Provider value={{
-            saveGuessedLetter
+            saveGuessedLetter, 
+            checkGuessedLetterWasAlreadyGuessed
         }} >
             {props.children}
         </LettersContext.Provider>
