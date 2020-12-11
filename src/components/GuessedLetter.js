@@ -10,15 +10,16 @@ const GuessedLetter = () => {
 
     return (
         <StyleWrapper id="guessed-letter" className="styled-div">
-                <input type="text" value={letter} onChange={e => setLetter(e.target.value)}></input>
+                <input  type="text" 
+                        value={letter} 
+                        onChange={e => setLetter(e.target.value)}></input>
                 <button type="button" 
                         data-guessed-letter={letter} 
                         onClick={e => {
                                 checkGuessedLetterWasAlreadyGuessed(e); 
                                 setLetter("");
                                 }} 
-                        disabled={letter.length !== 1}>
-                    Guess letter!</button>
+                        disabled={letter.length !== 1}>Guess letter!</button>
         </StyleWrapper>
     )
 
