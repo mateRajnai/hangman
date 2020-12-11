@@ -39,9 +39,7 @@ const StyleWrapper = styled.div`
 
     svg {
         margin: 0 auto;
-        background-color: green;
-        position:absolute;
-
+        border: 1px solid white;
     }
 
     line {
