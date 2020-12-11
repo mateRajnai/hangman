@@ -12,7 +12,7 @@ const WrongLetters = () => {
     return ( 
         <StyleWrapper id="wrong-letters" className="styled-div">
             {wrongLetters.map(letter => 
-                <WrongLetter key={uuidv4} letter={letter}/>
+                <WrongLetter key={uuidv4()} letter={letter}/>
                 )}
         </StyleWrapper>
     )

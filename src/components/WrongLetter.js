@@ -1,11 +1,19 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const WrongLetter = () => {
+const WrongLetter = (props) => {
 
 
     return (
-        <div></div>
+        <StyleWrapper>
+            {props.letter}
+        </StyleWrapper>
     );
 };
 
 export default WrongLetter;
+
+
+const StyleWrapper = styled.div`
+    color: white;
+`;
