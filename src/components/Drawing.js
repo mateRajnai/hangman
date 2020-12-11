@@ -13,7 +13,7 @@ const Drawing = () => {
     }, [wrongLetters])
 
     return <StyleWrapper id="drawing" className="styled-div">
-                <svg height="400" width="400">
+                <svg height="80%" width="90%">
                     <g id="body">
                         <circle cx="200" cy="80" r="20" stroke="white" strokeWidth="4" fill="white"/>
                         <line x1="200" y1="100" x2="200" y2="150" />
@@ -35,10 +35,12 @@ const Drawing = () => {
 export default Drawing;
 
 const StyleWrapper = styled.div`
-    flex: 4;
+    flex: 5;
 
     svg {
         margin: 0 auto;
+        background-color: green;
+
     }
 
     line {

@@ -22,4 +22,5 @@ export default WrongLetters;
 
 const StyleWrapper = styled.div`
     flex: 2;
+    height: 100%;
 `;
