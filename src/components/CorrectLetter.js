@@ -17,5 +17,5 @@ const StyleWrapper = styled.div`
     width: 1%;
     margin: 8px;
     color: white;   
-
+    border-bottom: 5px solid white;
 `;
