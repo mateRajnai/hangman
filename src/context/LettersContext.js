@@ -55,7 +55,8 @@ export const LettersProvider = (props) => {
         <LettersContext.Provider value={{
             saveGuessedLetter, 
             checkGuessedLetterWasAlreadyGuessed,
-            correctLetters
+            correctLetters,
+            wrongLetters
         }} >
             {props.children}
         </LettersContext.Provider>
