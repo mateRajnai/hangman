@@ -1,5 +1,4 @@
 import React, {useState, useEffect, useContext} from 'react';
-import GuessedLetter from '../components/GuessedLetter';
 import {VocabularyContext} from './VocabularyContext';
 
 export const LettersContext = React.createContext();
@@ -8,36 +7,38 @@ export const LettersProvider = (props) => {
 
     const {generatedWord} = useContext(VocabularyContext);
 
-    const [guessedLetter, setGuessedLetter] = useState("");
-    const [guessedLetters, setGuessedLetters] = useState("");
     const [correctLetters, setCorrectLetters] = useState([]);
     const [wrongLetters, setWrongLetters] = useState([]);
 
-    const addGuessedLetter = () => {
-        let isWrongLetter;
+    const saveGuessedLetter = (e) => {
+        const guessedLetter = e.target.getAttribute("data-guessed-letter");
+        let isWrongLetter = true;
+        console.log(guessedLetter);
+        
+        let correctLettersToBeUpdated = [...correctLetters];
         for (let i = 0; i < generatedWord.length; i++) {
             if (generatedWord.charAt(i) === guessedLetter) {
-                correctLetters[i] = generatedWord.charAt(i);
-                isWrongLetter = true;
+                correctLettersToBeUpdated[i] = generatedWord.charAt(i);
+                isWrongLetter = false;
             }
         }
+        setCorrectLetters(correctLettersToBeUpdated);
         if (isWrongLetter) {
             setWrongLetters([...wrongLetters, guessedLetter]);  
-
         }  
     }
 
 
     useEffect(() => {
-        console.log(guessedLetter)
-    }, [guessedLetter])
-    
-
+        console.log(generatedWord);
+        console.log(wrongLetters)
+        console.log(correctLetters)
+    }, [correctLetters, wrongLetters, generatedWord])
 
 
     return (
         <LettersContext.Provider value={{
-            setGuessedLetter
+            saveGuessedLetter
         }} >
             {props.children}
         </LettersContext.Provider>
