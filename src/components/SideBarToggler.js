@@ -21,7 +21,7 @@ const StyleWrapper = styled.div`
     flex: 1;
     button {
         width: 25%;
-        min-width: 78px;
+        min-width: 94px;
         height: 70%;
     }
 `;
