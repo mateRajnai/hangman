@@ -8,6 +8,7 @@ export const LettersProvider = (props) => {
 
 
     useEffect(() => {
+        console.log(guessedLetter)
     }, [guessedLetter])
 
 
