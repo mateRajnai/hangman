@@ -7,7 +7,7 @@ export const LettersProvider = (props) => {
 
     const {generatedWord} = useContext(VocabularyContext);
 
-    const [correctLetters, setCorrectLetters] = useState([]);
+    const [correctLetters, setCorrectLetters] = useState(new Array(generatedWord.length));
     const [wrongLetters, setWrongLetters] = useState([]);
 
     const checkGuessedLetterWasAlreadyGuessed = (e) => {
