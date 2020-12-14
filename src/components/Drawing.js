@@ -1,17 +1,17 @@
 import React, {useContext, useEffect, useState} from 'react';
 import styled from 'styled-components';
 import {LettersContext} from '../context/LettersContext';
-import {VocabularyContext} from '../context/VocabularyContext';
-import WrongLetters from './WrongLetters';
+import {GameContext} from '../context/GameContext';
 
 
 
 const Drawing = () => {
 
     const {wrongLetters, isLastlyGuessedLetterWrong} = useContext(LettersContext);
+    const {isEndOfGame, setIsEndOfGame} = useContext(GameContext);
     let [indexOfDrawingParts, setIndexOfDrawingParts] = useState(0);
     const drawingParts = document.getElementsByClassName("drawing-part");
-    const [isEndOfGame, setIsEndOfGame] = useState(false);
+    
 
 
     useEffect(() => {
@@ -21,7 +21,6 @@ const Drawing = () => {
             console.log("WRONG LETTER")
             setIndexOfDrawingParts(counter => counter + 1);
             drawingParts[indexOfDrawingParts].classList.add("draw");
-
         }
     }, [wrongLetters, isLastlyGuessedLetterWrong, isEndOfGame])
 
