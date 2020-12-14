@@ -10,15 +10,15 @@ const Drawing = () => {
 
     const {wrongLetters, isLastlyGuessedLetterWrong} = useContext(LettersContext);
     const {isWordGuessed, setIsWordGuessed} = useContext(VocabularyContext);
-    let [countOfWrongLetters, setCountOfWrongLetters] = useState(0);
+    let [indexOfDrawingParts, setIndexOfDrawingParts] = useState(0);
     const drawingParts = document.getElementsByClassName("drawing-part");
 
 
     useEffect(() => {
         if (!isWordGuessed && isLastlyGuessedLetterWrong) {
             console.log("WRONG LETTER")
-            setCountOfWrongLetters(counter => counter + 1);
-            drawingParts[countOfWrongLetters].classList.add("draw");
+            setIndexOfDrawingParts(counter => counter + 1);
+            drawingParts[indexOfDrawingParts].classList.add("draw");
 
         }
     }, [wrongLetters, isLastlyGuessedLetterWrong, isWordGuessed])
