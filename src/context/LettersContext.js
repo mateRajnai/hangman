@@ -9,6 +9,7 @@ export const LettersProvider = (props) => {
 
     const [correctLetters, setCorrectLetters] = useState(new Array(generatedWord.length));
     const [wrongLetters, setWrongLetters] = useState([]);
+    const [isLastlyGuessedLetterWrong, setIsLastlyGuessedLetterWrong] = useState();
 
     const checkGuessedLetterWasAlreadyGuessed = (e) => {
         const guessedLetter = e.target.getAttribute("data-guessed-letter");
@@ -29,9 +30,11 @@ export const LettersProvider = (props) => {
             }
         }
         if (guessedLetterIsWrong) {
-            setWrongLetters([...wrongLetters, guessedLetter]);  
+            setWrongLetters([...wrongLetters, guessedLetter]);
+            setIsLastlyGuessedLetterWrong(true);  
         } else {
             setCorrectLetters(correctLettersToBeUpdated);
+            setIsLastlyGuessedLetterWrong(false);
         }
     }
 
@@ -48,7 +51,8 @@ export const LettersProvider = (props) => {
             saveGuessedLetter, 
             checkGuessedLetterWasAlreadyGuessed,
             correctLetters,
-            wrongLetters
+            wrongLetters,
+            isLastlyGuessedLetterWrong
         }} >
             {props.children}
         </LettersContext.Provider>
