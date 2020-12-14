@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import styled from 'styled-components';
 import {LettersContext} from '../context/LettersContext';
 import WrongLetters from './WrongLetters';
@@ -8,6 +8,7 @@ import WrongLetters from './WrongLetters';
 const Drawing = () => {
 
     const {wrongLetters} = useContext(LettersContext);
+    const [countOfWrongLetters, setCountOfWrongLetters] = useState(0);
 
     useEffect(() => {
     }, [wrongLetters])
