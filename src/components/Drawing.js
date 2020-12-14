@@ -9,8 +9,12 @@ const Drawing = () => {
 
     const {wrongLetters} = useContext(LettersContext);
     let [countOfWrongLetters, setCountOfWrongLetters] = useState(0);
+    const numberOfDrawingParts = document.getElementsByClassName("draw").length;
+
+
 
     useEffect(() => {
+        console.log(numberOfDrawingParts);
         setCountOfWrongLetters(counter => counter + 1);
         console.log(countOfWrongLetters)
     }, [wrongLetters])
