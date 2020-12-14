@@ -24,7 +24,7 @@ const Drawing = () => {
     }, [wrongLetters, isLastlyGuessedLetterWrong, isWordGuessed])
 
     return <StyleWrapper id="drawing" className="styled-div">
-                <svg height="250" width="100%">
+                <svg height="250" width="100%" id="drawing-parts">
                     <g id="gallows">
                         <line x1="10" y1="230" x2="270" y2="230" className="drawing-part"/>
                         <line x1="100" y1="230" x2="100" y2="20" className="drawing-part"/>
