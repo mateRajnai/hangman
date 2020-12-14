@@ -18,9 +18,11 @@ export const VocabularyProvider = (props) => {
         if (vocabulary === "english") {
             const generatedEnglishWord = require('random-words')();
             console.log(generatedEnglishWord)
-            setGeneratedWord(generatedEnglishWord);
+            setGeneratedWord(generatedEnglishWord);            
         } else if (vocabulary === "german") {
-            setGeneratedWord("flagge")
+            const generatedGermanWord = require('random-noun-generator-german')();
+            console.log(generatedGermanWord)
+            setGeneratedWord(generatedGermanWord);
         }
     }
 
