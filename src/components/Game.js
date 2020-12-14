@@ -17,12 +17,12 @@ const Game = () => {
                 <SideBarToggler/>
                 <WrongLetters/>
                 <Drawing/>
-                <GameEndingFeedback/>
             </FirstSubContainerVertically>
             <SecondSubContainerVertically id="second-sub-container-vertically" className="styled-div">
                 <GuessedLetter/>
                 <CorrectLetters/>
             </SecondSubContainerVertically>
+            <GameEndingFeedback/>
         </GameContainer>
     );
 }
