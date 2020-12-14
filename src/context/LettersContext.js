@@ -21,26 +21,18 @@ export const LettersProvider = (props) => {
 
     const saveGuessedLetter = (guessedLetter) => {
         let guessedLetterIsWrong = true;
-        guessedLetterIsWrong = updateCorrectLetters(guessedLetter, guessedLetterIsWrong);
-        if (guessedLetterIsWrong) {
-            updateWrongLetters(guessedLetter);
-        }
-    }
-
-    const updateCorrectLetters = (guessedLetter, isWrongLetter) => {
         let correctLettersToBeUpdated = [...correctLetters];
         for (let i = 0; i < generatedWord.length; i++) {
             if (generatedWord.charAt(i) === guessedLetter) {
                 correctLettersToBeUpdated[i] = generatedWord.charAt(i);
-                isWrongLetter = false;
+                guessedLetterIsWrong = false;
             }
         }
-        setCorrectLetters(correctLettersToBeUpdated);
-        return isWrongLetter;
-    }
-
-    const updateWrongLetters = (guessedLetter) => {
-        setWrongLetters([...wrongLetters, guessedLetter]);  
+        if (guessedLetterIsWrong) {
+            setWrongLetters([...wrongLetters, guessedLetter]);  
+        } else {
+            setCorrectLetters(correctLettersToBeUpdated);
+        }
     }
 
 
