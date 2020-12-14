@@ -6,7 +6,6 @@ export const VocabularyProvider = (props) => {
 
     const [vocabularySidebarIsCollapsed, setVocabularySidebarIsCollapsed] = useState(true);
     const [generatedWord, setGeneratedWord] = useState("flagge");
-    const [isWordGuessed, setIsWordGuessed] = useState(false);
 
 
     const toggleVocabularies = () => {
@@ -29,9 +28,7 @@ export const VocabularyProvider = (props) => {
             vocabularySidebarIsCollapsed,
             toggleVocabularies,
             getWordFromVocabulary,
-            generatedWord,
-            isWordGuessed,
-            setIsWordGuessed
+            generatedWord
         }}>
             {props.children}
         </VocabularyContext.Provider>

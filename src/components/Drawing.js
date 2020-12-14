@@ -9,19 +9,21 @@ import WrongLetters from './WrongLetters';
 const Drawing = () => {
 
     const {wrongLetters, isLastlyGuessedLetterWrong} = useContext(LettersContext);
-    const {isWordGuessed, setIsWordGuessed} = useContext(VocabularyContext);
     let [indexOfDrawingParts, setIndexOfDrawingParts] = useState(0);
     const drawingParts = document.getElementsByClassName("drawing-part");
+    const [isEndOfGame, setIsEndOfGame] = useState(false);
 
 
     useEffect(() => {
-        if (!isWordGuessed && isLastlyGuessedLetterWrong) {
+        if (drawingParts[indexOfDrawingParts] === undefined) {
+            setIsEndOfGame(true);
+        } else if (!isEndOfGame && isLastlyGuessedLetterWrong) {
             console.log("WRONG LETTER")
             setIndexOfDrawingParts(counter => counter + 1);
             drawingParts[indexOfDrawingParts].classList.add("draw");
 
         }
-    }, [wrongLetters, isLastlyGuessedLetterWrong, isWordGuessed])
+    }, [wrongLetters, isLastlyGuessedLetterWrong, isEndOfGame])
 
     return <StyleWrapper id="drawing" className="styled-div">
                 <svg height="250" width="100%" id="drawing-parts">
