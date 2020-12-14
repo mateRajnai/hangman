@@ -18,7 +18,7 @@ const Drawing = () => {
             drawingParts[indexOfDrawingParts].classList.add("draw");
             if (drawingParts[indexOfDrawingParts + 1] === undefined) {
                 setIsEndOfGame(true);
-                console.log("END OF GAME")
+                
             } else {
                 setIndexOfDrawingParts(index => index + 1);
             }
@@ -67,5 +67,4 @@ const StyleWrapper = styled.div`
     .draw {
         visibility: visible;
     }
-
 `;
