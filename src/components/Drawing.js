@@ -8,9 +8,11 @@ import WrongLetters from './WrongLetters';
 const Drawing = () => {
 
     const {wrongLetters} = useContext(LettersContext);
-    const [countOfWrongLetters, setCountOfWrongLetters] = useState(0);
+    let [countOfWrongLetters, setCountOfWrongLetters] = useState(0);
 
     useEffect(() => {
+        setCountOfWrongLetters(counter => counter + 1);
+        console.log(countOfWrongLetters)
     }, [wrongLetters])
 
     return <StyleWrapper id="drawing" className="styled-div">
