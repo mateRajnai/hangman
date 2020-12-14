@@ -16,7 +16,9 @@ export const VocabularyProvider = (props) => {
     const getWordFromVocabulary = (event) => {
         const vocabulary = event.target.getAttribute("data-vocabulary");
         if (vocabulary === "english") {
-            setGeneratedWord("flag")
+            const generatedEnglishWord = require('random-words')();
+            console.log(generatedEnglishWord)
+            setGeneratedWord(generatedEnglishWord);
         } else if (vocabulary === "german") {
             setGeneratedWord("flagge")
         }
