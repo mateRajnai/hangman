@@ -1,12 +1,22 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import styled from 'styled-components';
 import {LettersContext} from '../context/LettersContext';
+import {GameContext} from '../context/GameContext';
 import CorrectLetter from './CorrectLetter';
 import {v4 as uuidv4} from 'uuid';
 
 const CorrectLetters = () => {
 
     const {correctLetters} = useContext(LettersContext);
+    const {setIsEndOfGame, setIsPlayerWon} = useContext(GameContext);
+
+    useEffect(() => {
+        if (!correctLetters.includes(undefined)) {
+            setIsEndOfGame(true);
+            setIsPlayerWon(true);
+        }
+    }, [correctLetters])    
+    
 
     return (
     <StyleWrapper id="correct-letters" className="styled-div">
