@@ -5,7 +5,8 @@ import WrongLetters from './WrongLetters';
 import SideBarToggler from './SideBarToggler';
 import CorrectLetters from './CorrectLetters';
 import GuessedLetter from './GuessedLetter';
-import GameEndingAlert from './GameEndingAlert';
+import GameEndingFeedback from './GameEndingFeedback';
+
 
 const Game = () => {
 
@@ -16,7 +17,7 @@ const Game = () => {
                 <SideBarToggler/>
                 <WrongLetters/>
                 <Drawing/>
-                <GameEndingAlert/>
+                <GameEndingFeedback/>
             </FirstSubContainerVertically>
             <SecondSubContainerVertically id="second-sub-container-vertically" className="styled-div">
                 <GuessedLetter/>

@@ -2,7 +2,7 @@ import React, {useContext, useEffect} from 'react';
 import { GameContext } from '../context/GameContext';
 import styled from 'styled-components';
 
-const GameEndingAlert = () => {
+const GameEndingFeedback = () => {
 
 
     const {isEndOfGame, isPlayerWon} = useContext(GameContext);
@@ -35,7 +35,7 @@ const GameEndingAlert = () => {
 };
 
 
-export default GameEndingAlert;
+export default GameEndingFeedback;
 
 const StyleWrapper = styled.div`
     position: absolute;
