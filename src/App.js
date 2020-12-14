@@ -4,16 +4,19 @@ import SideBar from "./components/SideBar";
 import styled from "styled-components";
 import {VocabularyProvider} from "./context/VocabularyContext"
 import {LettersProvider} from "./context/LettersContext"
+import { GameProvider } from './context/GameContext';
 
 function App() {
   return (
     <StyleWrapper id="App">
-      <VocabularyProvider>
-        <LettersProvider>
-          <Game/>
-          <SideBar/>
-        </LettersProvider>
-      </VocabularyProvider>
+      <GameProvider>
+        <VocabularyProvider>
+          <LettersProvider>
+            <Game/>
+            <SideBar/>
+          </LettersProvider>
+        </VocabularyProvider>
+      </GameProvider>
     </StyleWrapper>
   );
 }

@@ -9,18 +9,19 @@ const Drawing = () => {
 
     const {wrongLetters, isLastlyGuessedLetterWrong} = useContext(LettersContext);
     const {isEndOfGame, setIsEndOfGame} = useContext(GameContext);
-    let [indexOfDrawingParts, setIndexOfDrawingParts] = useState(0);
+    const [indexOfDrawingParts, setIndexOfDrawingParts] = useState(0);
     const drawingParts = document.getElementsByClassName("drawing-part");
     
 
-
     useEffect(() => {
-        if (drawingParts[indexOfDrawingParts] === undefined) {
-            setIsEndOfGame(true);
-        } else if (!isEndOfGame && isLastlyGuessedLetterWrong) {
-            console.log("WRONG LETTER")
-            setIndexOfDrawingParts(counter => counter + 1);
+        if (!isEndOfGame && isLastlyGuessedLetterWrong) {
             drawingParts[indexOfDrawingParts].classList.add("draw");
+            if (drawingParts[indexOfDrawingParts + 1] === undefined) {
+                setIsEndOfGame(true);
+                console.log("END OF GAME")
+            } else {
+                setIndexOfDrawingParts(index => index + 1);
+            }
         }
     }, [wrongLetters, isLastlyGuessedLetterWrong, isEndOfGame])
 
