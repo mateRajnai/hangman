@@ -13,7 +13,7 @@ export const VocabularyProvider = (props) => {
     }
 
     // TODO: refactor
-    const getWordFromVocabulary = (event) => {
+    const generateWord = (event) => {
         const vocabulary = event.target.getAttribute("data-vocabulary");
         if (vocabulary === "english") {
             const generatedEnglishWord = require('random-words')();
@@ -31,7 +31,7 @@ export const VocabularyProvider = (props) => {
         <VocabularyContext.Provider value={{
             vocabularySidebarIsCollapsed,
             toggleVocabularies,
-            getWordFromVocabulary,
+            generateWord,
             generatedWord
         }}>
             {props.children}
