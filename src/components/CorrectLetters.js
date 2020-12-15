@@ -11,7 +11,7 @@ const CorrectLetters = () => {
     const {setIsEndOfGame, setIsPlayerWon} = useContext(GameContext);
 
     useEffect(() => {
-        if (!correctLetters.includes(undefined)) {
+        if (!correctLetters.includes(null) && correctLetters.length !== 0) {
             setIsEndOfGame(true);
             setIsPlayerWon(true);
         }

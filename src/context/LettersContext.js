@@ -7,7 +7,7 @@ export const LettersProvider = (props) => {
 
     const {generatedWord} = useContext(VocabularyContext);
 
-    const [correctLetters, setCorrectLetters] = useState(new Array(generatedWord.length));
+    const [correctLetters, setCorrectLetters] = useState([]);
     const [wrongLetters, setWrongLetters] = useState([]);
     const [isLastlyGuessedLetterWrong, setIsLastlyGuessedLetterWrong] = useState();
 
@@ -37,6 +37,18 @@ export const LettersProvider = (props) => {
             setIsLastlyGuessedLetterWrong(false);
         }
     }
+
+    useEffect(() => {
+        let correctLettersInitialization = [];
+        for (let i = 0; i < generatedWord.length; i++) {
+            correctLettersInitialization[i] = null;
+        }
+        console.log("LETTERS CONTEXT")
+        console.log(correctLetters)
+        setCorrectLetters(correctLettersInitialization)
+        console.log("----------")
+        
+    }, [generatedWord])
 
 
     useEffect(() => {
