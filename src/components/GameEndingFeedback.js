@@ -16,13 +16,13 @@ const GameEndingFeedback = () => {
             {isEndOfGame && isPlayerWon &&
                         <div className="alert alert-success" role="alert">
                             <strong>Well done! You won the game.</strong> 
-                            <button onClick={startNewGame}>Start new game</button>
+                            <button onClick={e => startNewGame(e)}>Start new game</button>
                         </div>
             }
             {isEndOfGame && !isPlayerWon &&
                         <div className="alert alert-danger" role="alert">
                             <strong>Oh snap!</strong> Change a few things up and try submitting again.
-                            <button onClick={startNewGame}>Start new game</button>
+                            <button onClick={e => startNewGame(e)}>Start new game</button>
                         </div>
             }
         </StyleWrapper>
