@@ -6,6 +6,7 @@ export const VocabularyProvider = (props) => {
 
     const [vocabularySidebarIsCollapsed, setVocabularySidebarIsCollapsed] = useState(true);
     const [generatedWord, setGeneratedWord] = useState("a");
+    const [vocabulary, setVocabulary] = useState("english");
 
 
     const toggleVocabularies = () => {
@@ -14,12 +15,14 @@ export const VocabularyProvider = (props) => {
 
     // TODO: refactor
     const generateWord = (event) => {
-        const vocabulary = event.target.getAttribute("data-vocabulary");
-        if (vocabulary === "english") {
+        const chosenVocabulary = event.target.getAttribute("data-vocabulary") || vocabulary;
+        setVocabulary(chosenVocabulary);
+        console.log(`vocab: ${chosenVocabulary}`)
+        if (chosenVocabulary === "english") {
             const generatedEnglishWord = require('random-words')();
             console.log(generatedEnglishWord)
             setGeneratedWord(generatedEnglishWord);            
-        } else if (vocabulary === "german") {
+        } else if (chosenVocabulary === "german") {
             const generatedGermanWord = require('random-noun-generator-german')();
             console.log(generatedGermanWord)
             setGeneratedWord(generatedGermanWord);
@@ -33,6 +36,7 @@ export const VocabularyProvider = (props) => {
             toggleVocabularies,
             generateWord,
             generatedWord
+            
         }}>
             {props.children}
         </VocabularyContext.Provider>
