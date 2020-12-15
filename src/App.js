@@ -9,14 +9,14 @@ import { GameProvider } from './context/GameContext';
 function App() {
   return (
     <StyleWrapper id="App">
-      <GameProvider>
-        <VocabularyProvider>
+      <VocabularyProvider>
+        <GameProvider>
           <LettersProvider>
             <Game/>
             <SideBar/>
           </LettersProvider>
-        </VocabularyProvider>
-      </GameProvider>
+        </GameProvider>
+      </VocabularyProvider>
     </StyleWrapper>
   );
 }
