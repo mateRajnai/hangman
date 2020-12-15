@@ -32,4 +32,6 @@ export default CorrectLetters;
 const StyleWrapper = styled.div`
     flex: 4;
     display: flex;
+    justify-content: center;
+    align-items: center;
 `;
