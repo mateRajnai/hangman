@@ -1,7 +1,7 @@
 import './App.css';
 import Game from "./components/Game";
 import Vocabulary from "./components/Vocabulary";
-import SideBar from "./components/SideBar";
+import Header from "./components/Header";
 import styled from "styled-components";
 import {VocabularyProvider} from "./context/VocabularyContext"
 import {LettersProvider} from "./context/LettersContext"
@@ -16,17 +16,17 @@ function App() {
         <VocabularyProvider>
           <GameProvider>
             <LettersProvider>
-              <Route
-              path={"/"}
-              exact
-              component={Game}
-              />
-              <Route
-              path={"/vocabulary"}
-              exact
-              component={Vocabulary}
-              />
-              <SideBar/>
+              <Header/>
+                <Route
+                path={"/"}
+                exact
+                component={Game}
+                />
+                <Route
+                path={"/vocabulary"}
+                exact
+                component={Vocabulary}
+                />
             </LettersProvider>
           </GameProvider>
         </VocabularyProvider>
@@ -39,5 +39,6 @@ export default App;
 
 const StyleWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+
 `;
