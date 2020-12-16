@@ -1,6 +1,6 @@
 import './App.css';
 import Game from "./components/Game";
-import Game from "./components/Vocabulary";
+import Vocabulary from "./components/Vocabulary";
 import SideBar from "./components/SideBar";
 import styled from "styled-components";
 import {VocabularyProvider} from "./context/VocabularyContext"
