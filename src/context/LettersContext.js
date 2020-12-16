@@ -13,7 +13,6 @@ export const LettersProvider = (props) => {
 
     const checkGuessedLetterWasAlreadyGuessed = (e) => {
         const guessedLetter = e.target.getAttribute("data-guessed-letter");
-        console.log(guessedLetter);
         const isAlreadyGuessed = wrongLetters.includes(guessedLetter) || correctLetters.includes(guessedLetter);
         if (!isAlreadyGuessed) 
             saveGuessedLetter(guessedLetter);
@@ -43,21 +42,8 @@ export const LettersProvider = (props) => {
         for (let i = 0; i < generatedWord.length; i++) {
             correctLettersInitialization[i] = null;
         }
-        console.log("LETTERS CONTEXT")
-        console.log(correctLetters)
-        setCorrectLetters(correctLettersInitialization)
-        setWrongLetters([]);
-        console.log("----------")
         
     }, [generatedWord])
-
-
-    useEffect(() => {
-        console.log(generatedWord);
-        console.log(wrongLetters)
-        console.log(correctLetters)
-    }, [correctLetters, wrongLetters, generatedWord])
-
 
     return (
         <LettersContext.Provider value={{
