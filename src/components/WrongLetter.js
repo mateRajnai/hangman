@@ -6,7 +6,7 @@ const WrongLetter = (props) => {
 
     return (
         <StyleWrapper>
-            {props.letter}
+            {props.letter},
         </StyleWrapper>
     );
 };
@@ -16,4 +16,5 @@ export default WrongLetter;
 
 const StyleWrapper = styled.div`
     color: white;
+    margin: 6px;
 `;
