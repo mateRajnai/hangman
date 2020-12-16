@@ -1,5 +1,6 @@
 import './App.css';
 import Game from "./components/Game";
+import Game from "./components/Vocabulary";
 import SideBar from "./components/SideBar";
 import styled from "styled-components";
 import {VocabularyProvider} from "./context/VocabularyContext"
@@ -19,6 +20,11 @@ function App() {
               path={"/"}
               exact
               component={Game}
+              />
+              <Route
+              path={"/vocabulary"}
+              exact
+              component={Vocabulary}
               />
               <SideBar/>
             </LettersProvider>
