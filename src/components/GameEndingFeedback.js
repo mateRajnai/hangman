@@ -9,6 +9,7 @@ const GameEndingFeedback = () => {
 
     useEffect(() => {
         console.log(isPlayerWon);
+        console.log(isEndOfGame);
     }, [isPlayerWon])
 
     return (
