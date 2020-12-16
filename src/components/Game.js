@@ -13,7 +13,6 @@ const Game = () => {
 
     return (
         <GameContainer id="game-container" className="styled-div">
-            <Header/>
             <FirstSubContainerVertically id="first-sub-container-vertically" className="styled-div">
                 <WrongLetters/>
                 <Drawing/>
@@ -30,7 +29,7 @@ const Game = () => {
 export default Game;
 
 const GameContainer = styled.div`
-    flex: 10;
+    flex: 20;
     display: flex;
     flex-direction: column;
     background-color: #383961;
