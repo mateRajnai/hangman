@@ -27,6 +27,7 @@ const Drawing = () => {
         }
     }, [wrongLetters, isLastlyGuessedLetterWrong, isEndOfGame])
 
+    
     useEffect(() => {
         for (let i = 0; i < drawingParts.length; i++) {
             drawingParts[i].classList.remove("draw");

@@ -15,6 +15,7 @@ export const GameProvider = (props) => {
         generateWord(e);
     }
 
+
     return (
         <GameContext.Provider value={{
             isEndOfGame,
