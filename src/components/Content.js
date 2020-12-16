@@ -30,5 +30,4 @@ export default Content;
 const StyleWrapper = styled.div`
     flex: 20;
     display: flex;
-    background-color: #383961;
 `;

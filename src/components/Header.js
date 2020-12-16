@@ -26,6 +26,7 @@ const StyleWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: 2px solid white;
 
     .link {
         color: red;
