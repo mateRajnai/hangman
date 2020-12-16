@@ -2,7 +2,7 @@ import React from 'react'
 import styled from "styled-components";
 import Drawing from './Drawing';
 import WrongLetters from './WrongLetters';
-import SideBarToggler from './SideBarToggler';
+import SideBarToggler from './Header';
 import CorrectLetters from './CorrectLetters';
 import GuessedLetter from './GuessedLetter';
 import GameEndingFeedback from './GameEndingFeedback';
@@ -14,7 +14,6 @@ const Game = () => {
     return (
         <GameContainer id="game-container" className="styled-div">
             <FirstSubContainerVertically id="first-sub-container-vertically" className="styled-div">
-                <SideBarToggler/>
                 <WrongLetters/>
                 <Drawing/>
             </FirstSubContainerVertically>
