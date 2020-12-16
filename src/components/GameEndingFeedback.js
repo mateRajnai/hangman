@@ -16,13 +16,13 @@ const GameEndingFeedback = () => {
             {isEndOfGame && isPlayerWon &&
                         <div className="alert alert-success" role="alert">
                             <strong>Well done! You won the game.</strong> 
-                            <button onClick={e => startNewGame(e)}>Start new game</button>
+                            <button onClick={e => startNewGame(e)} className="new-game-button">Start new game</button>
                         </div>
             }
             {isEndOfGame && !isPlayerWon &&
                         <div className="alert alert-danger" role="alert">
-                            <strong>Oh snap!</strong> Change a few things up and try submitting again.
-                            <button onClick={e => startNewGame(e)}>Start new game</button>
+                            <strong>Oh snap! Game over.</strong>
+                            <button onClick={e => startNewGame(e)} className="new-game-button">Start new game</button>
                         </div>
             }
         </StyleWrapper>
@@ -42,11 +42,15 @@ const StyleWrapper = styled.div`
     .alert {
         height: 150px;
         width: 200px;
-        color: white;
-        background-color: red;
+        background-color: #503047;
         padding: 20px 20px;
         border: 3px solid;
         border-radius: 20px;
         border-color: white;
+    }
+
+    .new-game-button {
+        margin-top: 5px;
+        background-color: #383961;
     }
 `;
