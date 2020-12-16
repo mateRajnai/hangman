@@ -34,6 +34,7 @@ const StyleWrapper = styled.div`
         width: 50px;
         height: 24px;
         position: absolute;
+        color: #383961;
     }
 
     button {
@@ -41,5 +42,6 @@ const StyleWrapper = styled.div`
         width: 80px;
         height: 24px;
         position: absolute;
+        color: #383961;
     }
 `;
