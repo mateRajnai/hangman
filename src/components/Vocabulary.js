@@ -11,7 +11,7 @@ const Vocabulary = () => {
 
     return (
         <StyleWrapper>
-            <h1>Vocabularies</h1>
+            <h1>Vocabularies:</h1>
             <button type="button" className="flag-button"  onClick={generateWord}>
                 <StyledFlag src={englishFlag} alt="English vocabulary" data-vocabulary="english"></StyledFlag>
             </button>
@@ -41,5 +41,6 @@ const StyleWrapper = styled.div`
 
     h1 {
         margin-top: 5%;
+        text-decoration: underline;
     }
 `;
