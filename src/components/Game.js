@@ -2,7 +2,6 @@ import React from 'react'
 import styled from "styled-components";
 import Drawing from './Drawing';
 import WrongLetters from './WrongLetters';
-import Header from './Header';
 import CorrectLetters from './CorrectLetters';
 import GuessedLetter from './GuessedLetter';
 import GameEndingFeedback from './GameEndingFeedback';
