@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useState} from 'react';
 import styled from 'styled-components';
 import {LettersContext} from '../context/LettersContext';
 import {GameContext} from '../context/GameContext';
+import { VocabularyContext } from '../context/VocabularyContext';
 
 
 
@@ -9,6 +10,7 @@ const Drawing = () => {
 
     const {wrongLetters, isLastlyGuessedLetterWrong} = useContext(LettersContext);
     const {isEndOfGame, setIsEndOfGame} = useContext(GameContext);
+    const {generatedWord} = useContext(VocabularyContext);
     const [indexOfDrawingParts, setIndexOfDrawingParts] = useState(0);
     const drawingParts = document.getElementsByClassName("drawing-part");
     
@@ -24,6 +26,13 @@ const Drawing = () => {
             }
         }
     }, [wrongLetters, isLastlyGuessedLetterWrong, isEndOfGame])
+
+    useEffect(() => {
+        for (let i = 0; i < drawingParts.length; i++) {
+            drawingParts[i].classList.remove("draw");
+        }
+        setIndexOfDrawingParts(0);
+    }, [generatedWord])
 
     return <StyleWrapper id="drawing" className="styled-div">
                 <svg height="250" width="100%" id="drawing-parts">
