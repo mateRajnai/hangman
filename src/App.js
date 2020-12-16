@@ -5,19 +5,27 @@ import styled from "styled-components";
 import {VocabularyProvider} from "./context/VocabularyContext"
 import {LettersProvider} from "./context/LettersContext"
 import { GameProvider } from './context/GameContext';
+import { BrowserRouter, Route } from "react-router-dom";
+
 
 function App() {
   return (
-    <StyleWrapper id="App">
-      <VocabularyProvider>
-        <GameProvider>
-          <LettersProvider>
-            <Game/>
-            <SideBar/>
-          </LettersProvider>
-        </GameProvider>
-      </VocabularyProvider>
-    </StyleWrapper>
+    <BrowserRouter>
+      <StyleWrapper id="App">
+        <VocabularyProvider>
+          <GameProvider>
+            <LettersProvider>
+              <Route
+              path={"/"}
+              exact
+              component={Game}
+              />
+              <SideBar/>
+            </LettersProvider>
+          </GameProvider>
+        </VocabularyProvider>
+      </StyleWrapper>
+    </BrowserRouter>
   );
 }
 
