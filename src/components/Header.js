@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Header = () => {
@@ -8,9 +8,12 @@ const Header = () => {
     return (
     <StyleWrapper id="header" className="styled-div">
         <header>
-            <Link exact={true} to={"/vocabulary"}>
+            <NavLink exact={true} to={"/"} className="link">
+                Home
+            </NavLink>
+            <NavLink exact={true} to={"/vocabulary"} className="link">
                 Vocabularies
-            </Link>
+            </NavLink>            
         </header>
     </StyleWrapper>
     )
@@ -20,4 +23,13 @@ export default Header;
 
 const StyleWrapper = styled.div`
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .link {
+        color: red;
+        padding: 10px;
+    }
+
 `;
