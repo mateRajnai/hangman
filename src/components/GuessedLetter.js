@@ -29,19 +29,18 @@ export default GuessedLetter;
 const StyleWrapper = styled.div`
     flex: 1;
     position: relative;
+    display: flex;
+    justify-content: center;
 
     input {
         width: 50px;
         height: 24px;
-        position: absolute;
         color: #383961;
     }
 
     button {
-        margin: 0 50px;
         width: 80px;
         height: 24px;
-        position: absolute;
         color: #383961;
     }
 `;
