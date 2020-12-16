@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useContext} from 'react';
+import React, {useState, useContext} from 'react';
 import {VocabularyContext} from './VocabularyContext';
 
 export const GameContext = React.createContext();
@@ -13,6 +13,8 @@ export const GameProvider = (props) => {
         setIsEndOfGame(false);
         setIsPlayerWon(false);
         generateWord(e);
+        console.log(isPlayerWon)
+        console.log(isEndOfGame)
     }
 
 
