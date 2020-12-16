@@ -59,10 +59,12 @@ export default Drawing;
 
 const StyleWrapper = styled.div`
     flex: 5;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    margin: 10px 0;
 
     svg {
         margin: 0 auto;
-        border: 1px solid white;
     }
 
     line {
