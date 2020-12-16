@@ -10,14 +10,15 @@ const Vocabulary = () => {
     const {generateWord} = useContext(VocabularyContext);
 
     return (
-        <div>
+        <StyleWrapper>
+            <h1>Vocabularies</h1>
             <button type="button" className="flag-button"  onClick={generateWord}>
                 <StyledFlag src={englishFlag} alt="English vocabulary" data-vocabulary="english"></StyledFlag>
             </button>
             <button type="button" className="flag-button" onClick={generateWord}>
                 <StyledFlag src={germanFlag} alt="German vocabulary" data-vocabulary="german"></StyledFlag>
             </button>
-        </div>
+        </StyleWrapper>
     );
 };
 
@@ -29,4 +30,16 @@ const StyledFlag = styled.img`
     height: 80px;
     cursor: pointer;
     border: 0
+`;
+
+const StyleWrapper = styled.div`
+    width: 100%;
+    background-color: #383961;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        margin-top: 5%;
+    }
 `;
