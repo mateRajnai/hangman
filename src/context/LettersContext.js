@@ -46,6 +46,7 @@ export const LettersProvider = (props) => {
         console.log("LETTERS CONTEXT")
         console.log(correctLetters)
         setCorrectLetters(correctLettersInitialization)
+        setWrongLetters([]);
         console.log("----------")
         
     }, [generatedWord])
