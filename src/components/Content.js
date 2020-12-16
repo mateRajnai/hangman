@@ -30,6 +30,5 @@ export default Content;
 const StyleWrapper = styled.div`
     flex: 20;
     display: flex;
-    flex-direction: column;
     background-color: #383961;
 `;
