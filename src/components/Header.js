@@ -22,14 +22,13 @@ const Header = () => {
 export default Header;
 
 const StyleWrapper = styled.div`
-    flex: 1;
+    flex: 2;
     display: flex;
     justify-content: center;
     align-items: center;
     border-bottom: 2px solid white;
 
     .link {
-        color: red;
         padding: 10px;
     }
 
