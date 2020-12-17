@@ -4,23 +4,27 @@ export const VocabularyContext = React.createContext();
 
 export const VocabularyProvider = (props) => {
 
-    const [generatedWord, setGeneratedWord] = useState("a");
     const [vocabulary, setVocabulary] = useState("english");
+    const [generatedWord, setGeneratedWord] = useState("a");
 
-    // TODO: refactor
     const generateWord = (event) => {
         const chosenVocabulary = event.target.getAttribute("data-vocabulary") || vocabulary;
         setVocabulary(chosenVocabulary);
-        console.log(`vocab: ${chosenVocabulary}`)
-        if (chosenVocabulary === "english") {
-            const generatedEnglishWord = require('random-words')();
-            console.log(generatedEnglishWord)
-            setGeneratedWord(generatedEnglishWord);            
-        } else if (chosenVocabulary === "german") {
-            const generatedGermanWord = require('random-noun-generator-german')();
-            console.log(generatedGermanWord)
-            setGeneratedWord(generatedGermanWord);
+        let generatedWord;
+        switch (chosenVocabulary) {
+            case "english":
+                generatedWord = require('random-words')();
+                break;
+            case "german":
+                generatedWord = require('random-noun-generator-german')();
+                break;
+            default:
+                generatedWord = "apple";
+                break;
         }
+        setGeneratedWord(generatedWord); 
+        console.log(`vocab: ${chosenVocabulary}`);
+        console.log(generatedWord);           
     }
 
     return (
