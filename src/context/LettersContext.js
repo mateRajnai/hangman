@@ -18,14 +18,10 @@ export const LettersProvider = (props) => {
     }
 
     const saveGuessedLetter = (guessedLetter) => {
-        let guessedLetterIsWrong = true;
         let correctLettersToBeUpdated = [...correctLetters];
-        for (let i = 0; i < generatedWord.length; i++) {
-            if (generatedWord.charAt(i).toLowerCase() === guessedLetter) {
-                correctLettersToBeUpdated[i] = generatedWord.charAt(i);
-                guessedLetterIsWrong = false;
-            }
-        }
+        const guessedLetterIsWrong = updateCorrectLettersWhileSettingGuessedLetterIsWrong(
+                                                                correctLettersToBeUpdated, 
+                                                                guessedLetter);                                      
         if (guessedLetterIsWrong) {
             setWrongLetters([...wrongLetters, guessedLetter]);
             setIsLastlyGuessedLetterWrong(true);  
@@ -33,6 +29,17 @@ export const LettersProvider = (props) => {
             setCorrectLetters(correctLettersToBeUpdated);
             setIsLastlyGuessedLetterWrong(false);
         }
+    }
+
+    const updateCorrectLettersWhileSettingGuessedLetterIsWrong = (correctLettersToBeUpdated, guessedLetter) => {
+        let guessedLetterIsWrong = true;
+        for (let i = 0; i < generatedWord.length; i++) {
+            if (generatedWord.charAt(i).toLowerCase() === guessedLetter) {
+                correctLettersToBeUpdated[i] = generatedWord.charAt(i);
+                guessedLetterIsWrong = false;
+            }
+        }
+        return guessedLetterIsWrong;
     }
 
     useEffect(() => {
