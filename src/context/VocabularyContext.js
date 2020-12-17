@@ -4,13 +4,8 @@ export const VocabularyContext = React.createContext();
 
 export const VocabularyProvider = (props) => {
 
-    const [vocabularySidebarIsCollapsed, setVocabularySidebarIsCollapsed] = useState(true);
     const [generatedWord, setGeneratedWord] = useState("a");
     const [vocabulary, setVocabulary] = useState("english");
-
-    const toggleVocabularies = () => {
-        setVocabularySidebarIsCollapsed(!vocabularySidebarIsCollapsed);
-    }
 
     // TODO: refactor
     const generateWord = (event) => {
@@ -30,8 +25,6 @@ export const VocabularyProvider = (props) => {
 
     return (
         <VocabularyContext.Provider value={{
-            vocabularySidebarIsCollapsed,
-            toggleVocabularies,
             generateWord,
             generatedWord
             
