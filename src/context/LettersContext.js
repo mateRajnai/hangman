@@ -39,7 +39,7 @@ export const LettersProvider = (props) => {
 
     useEffect(() => {
         setCorrectLetters(createArrayContainingNullsWithLengthOf(generatedWord.length));
-        // setWrongLetters([]);
+        setWrongLetters([]);
     }, [generatedWord])
 
     const createArrayContainingNullsWithLengthOf = (length) => {
