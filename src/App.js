@@ -1,12 +1,11 @@
 import './App.css';
-import Header from "./components/Header";
 import styled from "styled-components";
+import { BrowserRouter } from "react-router-dom";
+import Header from "./components/Header";
+import Content from './components/Content';
 import {VocabularyProvider} from "./context/VocabularyContext"
 import {LettersProvider} from "./context/LettersContext"
 import { GameProvider } from './context/GameContext';
-import { BrowserRouter } from "react-router-dom";
-import Content from './components/Content';
-
 
 function App() {
   return (
@@ -23,7 +22,7 @@ function App() {
         </BrowserRouter>
       </StyleWrapper>
   );
-}
+};
 
 export default App;
 

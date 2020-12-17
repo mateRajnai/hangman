@@ -4,8 +4,6 @@ import {LettersContext} from '../context/LettersContext';
 import {GameContext} from '../context/GameContext';
 import { VocabularyContext } from '../context/VocabularyContext';
 
-
-
 const Drawing = () => {
 
     const {wrongLetters, isLastlyGuessedLetterWrong, setIsLastlyGuessedLetterWrong} = useContext(LettersContext);
@@ -14,14 +12,12 @@ const Drawing = () => {
     const [indexOfDrawingParts, setIndexOfDrawingParts] = useState(0);
     const drawingParts = document.getElementsByClassName("drawing-part");
     
-
     useEffect(() => {
         if (!isEndOfGame && isLastlyGuessedLetterWrong) {
             drawingParts[indexOfDrawingParts].classList.add("draw");
             if (drawingParts[indexOfDrawingParts + 1] === undefined) {
                 setIsEndOfGame(true);
                 setIsLastlyGuessedLetterWrong(false);
-                
             } else {
                 setIndexOfDrawingParts(index => index + 1);
             }

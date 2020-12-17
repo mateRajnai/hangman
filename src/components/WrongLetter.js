@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const WrongLetter = (props) => {
-
-
     return (
         <StyleWrapper>
             {props.letter},
@@ -12,7 +10,6 @@ const WrongLetter = (props) => {
 };
 
 export default WrongLetter;
-
 
 const StyleWrapper = styled.div`
     color: white;

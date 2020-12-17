@@ -8,7 +8,6 @@ export const VocabularyProvider = (props) => {
     const [generatedWord, setGeneratedWord] = useState("a");
     const [vocabulary, setVocabulary] = useState("english");
 
-
     const toggleVocabularies = () => {
         setVocabularySidebarIsCollapsed(!vocabularySidebarIsCollapsed);
     }
@@ -29,7 +28,6 @@ export const VocabularyProvider = (props) => {
         }
     }
 
-
     return (
         <VocabularyContext.Provider value={{
             vocabularySidebarIsCollapsed,
@@ -42,4 +40,3 @@ export const VocabularyProvider = (props) => {
         </VocabularyContext.Provider>
     );
 };
-

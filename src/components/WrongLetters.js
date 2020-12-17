@@ -1,13 +1,12 @@
 import React, {useContext} from 'react';
+import {v4 as uuidv4} from 'uuid';
 import styled from 'styled-components'
 import WrongLetter from './WrongLetter';
 import {LettersContext} from '../context/LettersContext';
-import {v4 as uuidv4} from 'uuid';
 
 const WrongLetters = () => {
 
     const {wrongLetters} = useContext(LettersContext);
-
 
     return ( 
         <StyleWrapper id="wrong-letters" className="styled-div">
@@ -15,8 +14,8 @@ const WrongLetters = () => {
                     <WrongLetter key={uuidv4()} letter={letter}/>
                     )}    
         </StyleWrapper>
-    )
-}
+    );
+};
 
 export default WrongLetters;
 

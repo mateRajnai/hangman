@@ -1,9 +1,8 @@
 import React, {useContext} from 'react';
 import {VocabularyContext} from '../context/VocabularyContext';
+import styled from 'styled-components';
 import englishFlag from '../images/english_flag.png';
 import germanFlag from '../images/german_flag.png';
-import styled from 'styled-components';
-
 
 const Vocabulary = () => {
 

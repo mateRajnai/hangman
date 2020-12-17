@@ -6,10 +6,7 @@ import CorrectLetters from './CorrectLetters';
 import GuessedLetter from './GuessedLetter';
 import GameEndingFeedback from './GameEndingFeedback';
 
-
 const Game = () => {
-
-
     return (
         <GameContainer id="game-container" className="styled-div">
             <FirstSubContainerVertically id="first-sub-container-vertically" className="styled-div">
@@ -49,4 +46,3 @@ const SecondSubContainerVertically = styled.div`
     display: flex;
     flex-direction: column;
 `;
-

@@ -1,9 +1,9 @@
 import React, {useContext, useEffect} from 'react';
 import styled from 'styled-components';
+import {v4 as uuidv4} from 'uuid';
 import {LettersContext} from '../context/LettersContext';
 import {GameContext} from '../context/GameContext';
 import CorrectLetter from './CorrectLetter';
-import {v4 as uuidv4} from 'uuid';
 
 const CorrectLetters = () => {
 

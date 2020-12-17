@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const CorrectLetter = (props) => {
-
-
     return (
-    <StyleWrapper className="correct-letter">{props.letter}</StyleWrapper>
+        <StyleWrapper className="correct-letter">
+            {props.letter}
+        </StyleWrapper>
     );
 };
 

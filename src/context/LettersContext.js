@@ -6,7 +6,6 @@ export const LettersContext = React.createContext();
 export const LettersProvider = (props) => {
 
     const {generatedWord} = useContext(VocabularyContext);
-
     const [correctLetters, setCorrectLetters] = useState([]);
     const [wrongLetters, setWrongLetters] = useState([]);
     const [isLastlyGuessedLetterWrong, setIsLastlyGuessedLetterWrong] = useState();
@@ -17,7 +16,6 @@ export const LettersProvider = (props) => {
         if (!isAlreadyGuessed) 
             saveGuessedLetter(guessedLetter);
     }
-
 
     const saveGuessedLetter = (guessedLetter) => {
         let guessedLetterIsWrong = true;

@@ -7,7 +7,6 @@ const GuessedLetter = () => {
     const [letter, setLetter] = useState("");
     const {checkGuessedLetterWasAlreadyGuessed} = useContext(LettersContext);
 
-
     return (
         <StyleWrapper id="guessed-letter" className="styled-div">
                 <input  type="text" 
@@ -21,9 +20,8 @@ const GuessedLetter = () => {
                                 }} 
                         disabled={letter.length !== 1}>Guess letter!</button>
         </StyleWrapper>
-    )
-
-}
+    );
+};
 export default GuessedLetter;
 
 const StyleWrapper = styled.div`

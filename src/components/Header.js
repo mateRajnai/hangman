@@ -3,21 +3,19 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Header = () => {
-
-
     return (
-    <StyleWrapper id="header" className="styled-div">
-        <header>
-            <NavLink exact={true} to={"/"} className="link">
-                Home
-            </NavLink>
-            <NavLink exact={true} to={"/vocabulary"} className="link">
-                Vocabularies
-            </NavLink>            
-        </header>
-    </StyleWrapper>
-    )
-}
+        <StyleWrapper id="header" className="styled-div">
+            <header>
+                <NavLink exact={true} to={"/"} className="link">
+                    Home
+                </NavLink>
+                <NavLink exact={true} to={"/vocabulary"} className="link">
+                    Vocabularies
+                </NavLink>            
+            </header>
+        </StyleWrapper>
+    );
+};
 
 export default Header;
 
@@ -31,5 +29,4 @@ const StyleWrapper = styled.div`
     .link {
         padding: 10px;
     }
-
 `;
