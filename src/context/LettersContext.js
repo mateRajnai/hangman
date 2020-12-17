@@ -23,7 +23,7 @@ export const LettersProvider = (props) => {
         let guessedLetterIsWrong = true;
         let correctLettersToBeUpdated = [...correctLetters];
         for (let i = 0; i < generatedWord.length; i++) {
-            if (generatedWord.charAt(i) === guessedLetter) {
+            if (generatedWord.charAt(i).toLowerCase() === guessedLetter) {
                 correctLettersToBeUpdated[i] = generatedWord.charAt(i);
                 guessedLetterIsWrong = false;
             }
