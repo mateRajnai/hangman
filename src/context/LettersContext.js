@@ -42,6 +42,7 @@ export const LettersProvider = (props) => {
         for (let i = 0; i < generatedWord.length; i++) {
             correctLettersInitialization[i] = null;
         }
+        setCorrectLetters(correctLettersInitialization);
         
     }, [generatedWord])
 
