@@ -1,12 +1,10 @@
 import React from 'react';
 import { Route } from "react-router-dom";
+import styled from "styled-components";
 import Game from "./Game";
 import Vocabulary from "./Vocabulary";
-import styled from "styled-components";
-
 
 const Content = () => {
-
     return (
         <StyleWrapper>
             <Route
@@ -25,7 +23,6 @@ const Content = () => {
 };
 
 export default Content;
-
 
 const StyleWrapper = styled.div`
     flex: 20;
