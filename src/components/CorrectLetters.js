@@ -15,7 +15,7 @@ const CorrectLetters = () => {
             setIsEndOfGame(true);
             setIsPlayerWon(true);
         }
-    }, [correctLetters])    
+    }, [correctLetters, setIsEndOfGame, setIsPlayerWon])    
     
 
     return (

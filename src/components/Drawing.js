@@ -26,7 +26,7 @@ const Drawing = () => {
                 setIndexOfDrawingParts(index => index + 1);
             }
         }
-    }, [wrongLetters, isLastlyGuessedLetterWrong, isEndOfGame, setIsEndOfGame, setIsLastlyGuessedLetterWrong])
+    }, [drawingParts, wrongLetters, isLastlyGuessedLetterWrong, isEndOfGame, setIsEndOfGame, setIsLastlyGuessedLetterWrong])
 
     
     useEffect(() => {
@@ -34,7 +34,7 @@ const Drawing = () => {
             drawingParts[i].classList.remove("draw");
         }
         setIndexOfDrawingParts(0);
-    }, [generatedWord])
+    }, [generatedWord, drawingParts])
 
     return <StyleWrapper id="drawing" className="styled-div">
                 <svg height="250" width="100%" id="drawing-parts">

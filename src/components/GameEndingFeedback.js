@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext} from 'react';
 import { GameContext } from '../context/GameContext';
 import styled from 'styled-components';
 
@@ -6,11 +6,6 @@ const GameEndingFeedback = () => {
 
 
     const {isEndOfGame, isPlayerWon, startNewGame} = useContext(GameContext);
-
-    useEffect(() => {
-        console.log(isPlayerWon);
-        console.log(isEndOfGame);
-    }, [isPlayerWon])
 
     return (
         <StyleWrapper id="game-ending-alert">
