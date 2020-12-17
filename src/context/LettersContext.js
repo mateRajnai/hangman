@@ -39,6 +39,7 @@ export const LettersProvider = (props) => {
 
     useEffect(() => {
         setCorrectLetters(createArrayContainingNullsWithLengthOf(generatedWord.length));
+        // setWrongLetters([]);
     }, [generatedWord])
 
     const createArrayContainingNullsWithLengthOf = (length) => {
@@ -54,7 +55,8 @@ export const LettersProvider = (props) => {
             checkGuessedLetterWasAlreadyGuessed,
             correctLetters,
             wrongLetters,
-            isLastlyGuessedLetterWrong
+            isLastlyGuessedLetterWrong,
+            setIsLastlyGuessedLetterWrong
         }} >
             {props.children}
         </LettersContext.Provider>
