@@ -38,12 +38,12 @@ export const LettersProvider = (props) => {
     }
 
     useEffect(() => {
-        setCorrectLetters(createArrayWithLengthOfGeneratedWordContainingNulls());
+        setCorrectLetters(createArrayContainingNullsWithLengthOf(generatedWord.length));
     }, [generatedWord])
 
-    const createArrayWithLengthOfGeneratedWordContainingNulls = () => {
+    const createArrayContainingNullsWithLengthOf = (length) => {
         let array = [];
-        for (let i = 0; i < generatedWord.length; i++) {
+        for (let i = 0; i < length; i++) {
             array[i] = null;
         }
         return array;
