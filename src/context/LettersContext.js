@@ -38,13 +38,16 @@ export const LettersProvider = (props) => {
     }
 
     useEffect(() => {
-        let correctLettersInitialization = [];
-        for (let i = 0; i < generatedWord.length; i++) {
-            correctLettersInitialization[i] = null;
-        }
-        setCorrectLetters(correctLettersInitialization);
-        
+        setCorrectLetters(createArrayWithLengthOfGeneratedWordContainingNulls());
     }, [generatedWord])
+
+    const createArrayWithLengthOfGeneratedWordContainingNulls = () => {
+        let array = [];
+        for (let i = 0; i < generatedWord.length; i++) {
+            array[i] = null;
+        }
+        return array;
+    }
 
     return (
         <LettersContext.Provider value={{

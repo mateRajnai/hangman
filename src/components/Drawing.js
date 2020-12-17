@@ -20,6 +20,7 @@ const Drawing = () => {
             drawingParts[indexOfDrawingParts].classList.add("draw");
             if (drawingParts[indexOfDrawingParts + 1] === undefined) {
                 setIsEndOfGame(true);
+                // setIndexOfDrawingParts(0);
                 
             } else {
                 setIndexOfDrawingParts(index => index + 1);
@@ -28,12 +29,12 @@ const Drawing = () => {
     }, [wrongLetters, isLastlyGuessedLetterWrong, isEndOfGame])
 
     
-    useEffect(() => {
-        for (let i = 0; i < drawingParts.length; i++) {
-            drawingParts[i].classList.remove("draw");
-        }
-        setIndexOfDrawingParts(0);
-    }, [generatedWord])
+    // useEffect(() => {
+    //     for (let i = 0; i < drawingParts.length; i++) {
+    //         drawingParts[i].classList.remove("draw");
+    //     }
+    //     setIndexOfDrawingParts(0);
+    // }, [generatedWord])
 
     return <StyleWrapper id="drawing" className="styled-div">
                 <svg height="250" width="100%" id="drawing-parts">
