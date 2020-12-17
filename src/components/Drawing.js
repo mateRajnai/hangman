@@ -26,7 +26,7 @@ const Drawing = () => {
                 setIndexOfDrawingParts(index => index + 1);
             }
         }
-    }, [wrongLetters, isLastlyGuessedLetterWrong, isEndOfGame])
+    }, [wrongLetters, isLastlyGuessedLetterWrong, isEndOfGame, setIsEndOfGame, setIsLastlyGuessedLetterWrong])
 
     
     useEffect(() => {
