@@ -1,13 +1,13 @@
 import React, {useContext, useEffect, useState} from 'react';
 import styled from 'styled-components';
 import {LettersContext} from '../context/LettersContext';
-import {GameContext} from '../context/GameContext';
+import {GameStatusContext} from '../context/GameStatusContext';
 import { VocabularyContext } from '../context/VocabularyContext';
 
 const Drawing = () => {
 
     const {wrongLetters, isLastlyGuessedLetterWrong, setIsLastlyGuessedLetterWrong} = useContext(LettersContext);
-    const {isEndOfGame, setIsEndOfGame} = useContext(GameContext);
+    const {isEndOfGame, setIsEndOfGame} = useContext(GameStatusContext);
     const {generatedWord} = useContext(VocabularyContext);
     const [indexOfDrawingParts, setIndexOfDrawingParts] = useState(0);
     const drawingParts = document.getElementsByClassName("drawing-part");

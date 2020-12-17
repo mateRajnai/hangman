@@ -1,10 +1,10 @@
 import React, {useContext} from 'react';
-import { GameContext } from '../context/GameContext';
+import { GameStatusContext } from '../context/GameStatusContext';
 import styled from 'styled-components';
 
 const GameEndingFeedback = () => {
 
-    const {isEndOfGame, isPlayerWon, startNewGame} = useContext(GameContext);
+    const {isEndOfGame, isPlayerWon, startNewGame} = useContext(GameStatusContext);
 
     return (
         isEndOfGame &&

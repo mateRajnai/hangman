@@ -1,8 +1,8 @@
 import React, {useState, useContext} from 'react';
 import {VocabularyContext} from './VocabularyContext';
-export const GameContext = React.createContext();
+export const GameStatusContext = React.createContext();
 
-export const GameProvider = (props) => {
+export const GameStatusProvider = (props) => {
 
     const [isEndOfGame, setIsEndOfGame] = useState(false);
     const [isPlayerWon, setIsPlayerWon] = useState(false);
@@ -17,7 +17,7 @@ export const GameProvider = (props) => {
     }
 
     return (
-        <GameContext.Provider value={{
+        <GameStatusContext.Provider value={{
             isEndOfGame,
             setIsEndOfGame, 
             isPlayerWon, 
@@ -25,6 +25,6 @@ export const GameProvider = (props) => {
             startNewGame
         }}>
             {props.children}
-        </GameContext.Provider>
+        </GameStatusContext.Provider>
     );
 };

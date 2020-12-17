@@ -5,19 +5,19 @@ import Header from "./components/Header";
 import Content from './components/Content';
 import {VocabularyProvider} from "./context/VocabularyContext"
 import {LettersProvider} from "./context/LettersContext"
-import { GameProvider } from './context/GameContext';
+import { GameStatusProvider } from './context/GameStatusContext';
 
 function App() {
   return (
       <StyleWrapper id="App">
         <BrowserRouter>
             <VocabularyProvider>
-              <GameProvider>
+              <GameStatusProvider>
                 <LettersProvider>
                   <Header/>
                   <Content/>
                 </LettersProvider>
-              </GameProvider>
+              </GameStatusProvider>
             </VocabularyProvider>
         </BrowserRouter>
       </StyleWrapper>
