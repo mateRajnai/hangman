@@ -60,6 +60,18 @@ const StyleWrapper = styled.div`
     border-bottom: 1px solid white;
     margin: 10px 0;
 
+    @media screen and (min-width: 768px) {
+        border-top: none;
+        border-bottom: none;
+        position: relative;
+
+        svg {
+            position: absolute;
+            bottom: 0px; 
+
+        }
+    }
+
     svg {
         margin: 0 auto;
     }
