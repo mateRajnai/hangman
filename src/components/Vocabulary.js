@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {VocabularyContext} from '../context/VocabularyContext';
 import styled from 'styled-components';
 import englishFlag from '../images/english_flag.png';
@@ -6,17 +6,26 @@ import germanFlag from '../images/german_flag.png';
 
 const Vocabulary = () => {
 
-    const {generateWord} = useContext(VocabularyContext);
+    const {generateWord, vocabulary} = useContext(VocabularyContext);
+
+    useEffect(() => {
+
+    }, [vocabulary])
 
     return (
         <StyleWrapper>
-            <h1>Vocabularies:</h1>
-            <button type="button" className="flag-button"  onClick={generateWord}>
-                <StyledFlag src={englishFlag} alt="English vocabulary" data-vocabulary="english"></StyledFlag>
-            </button>
-            <button type="button" className="flag-button" onClick={generateWord}>
-                <StyledFlag src={germanFlag} alt="German vocabulary" data-vocabulary="german"></StyledFlag>
-            </button>
+            <div id="chosen-vocabulary" className="vocabulary-container">
+                <h2>Chosen vocabulary: {vocabulary}</h2>
+            </div>
+            <div id="available-vocabularies" className="vocabulary-container">
+                <h2>Available vocabularies:</h2>
+                <button type="button" className="flag-button"  onClick={generateWord}>
+                    <StyledFlag src={englishFlag} alt="English vocabulary" data-vocabulary="english"></StyledFlag>
+                </button>
+                <button type="button" className="flag-button" onClick={generateWord}>
+                    <StyledFlag src={germanFlag} alt="German vocabulary" data-vocabulary="german"></StyledFlag>
+                </button>
+            </div>
         </StyleWrapper>
     );
 };
@@ -36,10 +45,18 @@ const StyleWrapper = styled.div`
     background-color: #383961;
     display: flex;
     flex-direction: column;
-    align-items: center;
 
-    h1 {
+    .vocabulary-container {
+        margin: 20px;
+    }
+
+    h2 {
         margin-top: 5%;
-        text-decoration: underline;
+    }
+
+    #available-vocabularies {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 `;

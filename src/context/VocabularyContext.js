@@ -30,8 +30,8 @@ export const VocabularyProvider = (props) => {
     return (
         <VocabularyContext.Provider value={{
             generateWord,
-            generatedWord
-            
+            generatedWord,
+            vocabulary
         }}>
             {props.children}
         </VocabularyContext.Provider>
