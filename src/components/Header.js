@@ -1,17 +1,24 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Header = () => {
+
+    let location = useLocation();
+
     return (
         <StyleWrapper id="header" className="styled-div">
             <header>
-                <NavLink exact={true} to={"/"} className="link">
-                    Home
-                </NavLink>
-                <NavLink exact={true} to={"/vocabulary"} className="link">
-                    Vocabularies
-                </NavLink>            
+                {location.pathname === "/vocabulary" &&
+                    <NavLink exact={true} to={"/"} className="link">
+                        Home
+                    </NavLink>
+                    }
+                {location.pathname === "/" &&
+                    <NavLink exact={true} to={"/vocabulary"} className="link">
+                        Vocabularies
+                    </NavLink>
+                    }            
             </header>
         </StyleWrapper>
     );
