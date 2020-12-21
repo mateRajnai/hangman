@@ -26,7 +26,7 @@ const StyleWrapper = styled.div`
         color: white; 
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 992px) {
         height: 35%;
 
         .correct-letter {

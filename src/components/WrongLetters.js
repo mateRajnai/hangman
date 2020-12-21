@@ -25,7 +25,7 @@ const StyleWrapper = styled.div`
     display: flex;
     align-items: center;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 992px) {
         flex: 3;
     }
 `;

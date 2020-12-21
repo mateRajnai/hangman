@@ -64,7 +64,7 @@ const StyleWrapper = styled.div`
         align-items: center;
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 992px) {
         font-size: 150%;
         .vocabulary-container {
             margin: 0;

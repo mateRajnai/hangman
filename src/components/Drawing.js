@@ -60,7 +60,7 @@ const StyleWrapper = styled.div`
     border-bottom: 1px solid white;
     margin: 10px 0;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 992px) {
         border-top: none;
         border-bottom: none;
         position: relative;

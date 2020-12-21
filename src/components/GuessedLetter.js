@@ -42,7 +42,7 @@ const StyleWrapper = styled.div`
         color: #383961;
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 992px) {
         input {
             width: 4%;
             height: 70%;

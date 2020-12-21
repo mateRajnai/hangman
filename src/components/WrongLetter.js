@@ -16,7 +16,7 @@ const StyleWrapper = styled.div`
     margin: 6px;
     font-size: 150%;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 992px) {
         font-size: 270%;
         margin: 2%;
     }

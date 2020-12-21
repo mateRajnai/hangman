@@ -9,6 +9,8 @@ const GameEndingFeedback = () => {
     return (
         isEndOfGame &&
         <StyleWrapper id="game-ending-alert">
+            <div>
+
                             <strong>{isPlayerWon ? 
                                 "Well done! You won the game." : 
                                 "Oh snap! Game over."}</strong>
@@ -16,6 +18,8 @@ const GameEndingFeedback = () => {
                             <button onClick={e => startNewGame(e)} className="new-game-button">
                                 Start new game
                             </button>
+
+            </div>
         </StyleWrapper>
     );
 };
@@ -39,5 +43,14 @@ const StyleWrapper = styled.div`
     .new-game-button {
         margin-top: 5px;
         background-color: #383961;
+    }
+
+    @media screen and (min-width: 992px) {
+        width: 15%;
+        font-size: 170%;
+
+        .new-game-button {
+            font-size: 80%;
+        }   
     }
 `;
