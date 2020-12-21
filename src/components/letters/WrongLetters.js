@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import {v4 as uuidv4} from 'uuid';
 import styled from 'styled-components'
 import WrongLetter from './WrongLetter';
-import {LettersContext} from '../context/LettersContext';
+import {LettersContext} from '../../context/LettersContext';
 
 const WrongLetters = () => {
 

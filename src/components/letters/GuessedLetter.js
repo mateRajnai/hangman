@@ -1,6 +1,6 @@
 import React, {useState, useContext} from 'react';
 import styled from 'styled-components';
-import {LettersContext} from '../context/LettersContext';
+import {LettersContext} from '../../context/LettersContext';
 
 const GuessedLetter = () => {
 

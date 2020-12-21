@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from "styled-components";
 import Drawing from './Drawing';
-import WrongLetters from './WrongLetters';
-import CorrectLetters from './CorrectLetters';
-import GuessedLetter from './GuessedLetter';
+import WrongLetters from './letters/WrongLetters';
+import CorrectLetters from './letters/CorrectLetters';
+import GuessedLetter from './letters/GuessedLetter';
 import GameEndingFeedback from './GameEndingFeedback';
 
 const Game = () => {
