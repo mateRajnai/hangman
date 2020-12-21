@@ -1,25 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import styled from "styled-components";
+import { BrowserRouter } from "react-router-dom";
+import Header from "./components/Header";
+import Content from './components/Content';
+import {VocabularyProvider} from "./context/VocabularyContext"
+import {LettersProvider} from "./context/LettersContext"
+import { GameStatusProvider } from './context/GameStatusContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <StyleWrapper id="App">
+        <BrowserRouter>
+            <VocabularyProvider>
+              <GameStatusProvider>
+                <LettersProvider>
+                  <Header/>
+                  <Content/>
+                </LettersProvider>
+              </GameStatusProvider>
+            </VocabularyProvider>
+        </BrowserRouter>
+      </StyleWrapper>
   );
-}
+};
 
 export default App;
+
+const StyleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: #383961;
+`;
