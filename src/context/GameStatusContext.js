@@ -4,7 +4,6 @@ export const GameStatusContext = React.createContext();
 
 export const GameStatusProvider = (props) => {
 
-    const [isNewGame, setIsNewGame] = useState(false);
     const [isEndOfGame, setIsEndOfGame] = useState(false);
     const [isPlayerWon, setIsPlayerWon] = useState(false);
     const {generateWord} = useContext(VocabularyContext);
@@ -13,9 +12,6 @@ export const GameStatusProvider = (props) => {
         setIsEndOfGame(false);
         setIsPlayerWon(false);
         generateWord(e);
-        setIsNewGame(true);
-        console.log(isPlayerWon)
-        console.log(isEndOfGame)
     }
 
     return (
@@ -25,8 +21,6 @@ export const GameStatusProvider = (props) => {
             isPlayerWon, 
             setIsPlayerWon,
             startNewGame, 
-            isNewGame, 
-            setIsNewGame
         }}>
             {props.children}
         </GameStatusContext.Provider>

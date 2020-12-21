@@ -23,8 +23,6 @@ export const VocabularyProvider = (props) => {
                 break;
         }
         setGeneratedWord(generatedWord); 
-        console.log(`vocab: ${chosenVocabulary}`);
-        console.log(generatedWord);           
     }
 
     return (
