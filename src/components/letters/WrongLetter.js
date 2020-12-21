@@ -13,16 +13,14 @@ export default WrongLetter;
 
 const StyleWrapper = styled.div`
     color: white;
-    margin: 6px;
+    margin: 2%;
     font-size: 150%;
 
     @media screen and (min-width: 540px) {
         font-size: 195%;
-        margin: 2%;
     }    
     
     @media screen and (min-width: 992px) {
         font-size: 270%;
-        margin: 2%;
     }
 `;

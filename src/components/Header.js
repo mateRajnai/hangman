@@ -34,11 +34,8 @@ const StyleWrapper = styled.div`
     border-bottom: 2px solid white;
 
     .link {
-        padding: 10px;
         font-size: 140%;
     }
-
-    
 
     @media screen and (min-width: 540px) {
         .link {

@@ -31,14 +31,14 @@ const StyleWrapper = styled.div`
     justify-content: center;
 
     input {
-        width: 50px;
-        height: 24px;
+        width: 16%;
+        height: 80%;
         color: #383961;
     }
 
     button {
-        width: 80px;
-        height: 24px;
+        width: 25%;
+        height: 80%;
         color: #383961;
     }
 
