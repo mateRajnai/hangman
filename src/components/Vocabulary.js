@@ -47,7 +47,7 @@ const StyleWrapper = styled.div`
     flex-direction: column;
 
     .vocabulary-container {
-        margin: 20px;
+        margin: 5%;
     }
 
     h2 {

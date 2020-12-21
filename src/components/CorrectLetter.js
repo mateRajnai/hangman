@@ -18,7 +18,7 @@ const StyleWrapper = styled.div`
     height: 25%;
     width: 4%;
     border-bottom: 5px solid white;
-    margin: 8px;
+    margin: 2%;
 
     .correct-letter {
         font-size: 150%;

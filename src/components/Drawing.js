@@ -77,8 +77,8 @@ const StyleWrapper = styled.div`
     }
 
     line {
-    stroke: white;
-    stroke-width: 4;
+        stroke: white;
+        stroke-width: 4;
     }
 
     .drawing-part {
