@@ -38,6 +38,14 @@ const StyleWrapper = styled.div`
         font-size: 140%;
     }
 
+    
+
+    @media screen and (min-width: 540px) {
+        .link {
+            font-size: 180%;
+        }
+    }    
+    
     @media screen and (min-width: 992px) {
         .link {
             font-size: 180%;

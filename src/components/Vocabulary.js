@@ -64,6 +64,17 @@ const StyleWrapper = styled.div`
         align-items: center;
     }
 
+    
+    @media screen and (min-width: 540px) {
+        font-size: 120%;
+        .vocabulary-container {
+            margin: 5%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }    
+    
     @media screen and (min-width: 992px) {
         font-size: 150%;
         .vocabulary-container {

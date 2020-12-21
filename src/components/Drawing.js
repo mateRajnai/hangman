@@ -60,6 +60,31 @@ const StyleWrapper = styled.div`
     border-bottom: 1px solid white;
     margin: 10px 0;
 
+    svg {
+        margin: 0 auto;
+    }
+    
+    line {
+        stroke: white;
+        stroke-width: 4;
+    }
+
+    .drawing-part {
+        visibility: hidden;
+    }
+    
+    .draw {
+        visibility: visible;
+    }
+
+    @media screen and (min-width: 540px) {
+        svg {
+            box-sizing: content-box;
+            width: 50%;
+            padding: 10% 0 0 20%;
+        }
+    }
+
     @media screen and (min-width: 992px) {
         border-top: none;
         border-bottom: none;
@@ -70,22 +95,5 @@ const StyleWrapper = styled.div`
             width: 50%;
             padding: 15% 0 0 40%;
         }
-    }
-
-    svg {
-        margin: 0 auto;
-    }
-
-    line {
-        stroke: white;
-        stroke-width: 4;
-    }
-
-    .drawing-part {
-        visibility: hidden;
-    }
-
-    .draw {
-        visibility: visible;
     }
 `;

@@ -45,6 +45,16 @@ const StyleWrapper = styled.div`
         background-color: #383961;
     }
 
+    @media screen and (min-width: 540px) {
+        width: 40%;
+        height: 18%;
+        font-size: 150%;
+
+        .new-game-button {
+            font-size: 80%;
+        }   
+    }    
+    
     @media screen and (min-width: 992px) {
         width: 15%;
         font-size: 170%;
