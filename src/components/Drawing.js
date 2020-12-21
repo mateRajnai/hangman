@@ -66,8 +66,9 @@ const StyleWrapper = styled.div`
         position: relative;
 
         svg {
-            position: absolute;
-            bottom: 0px; 
+            box-sizing: content-box;
+            width: 50%;
+            padding: 10% 0 0 40%;
 
         }
     }
