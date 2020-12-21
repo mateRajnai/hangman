@@ -68,8 +68,7 @@ const StyleWrapper = styled.div`
         svg {
             box-sizing: content-box;
             width: 50%;
-            padding: 10% 0 0 40%;
-
+            padding: 15% 0 0 40%;
         }
     }
 
