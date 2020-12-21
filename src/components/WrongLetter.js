@@ -14,4 +14,5 @@ export default WrongLetter;
 const StyleWrapper = styled.div`
     color: white;
     margin: 6px;
+    font-size: 150%;
 `;
