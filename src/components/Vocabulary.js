@@ -37,7 +37,11 @@ const StyledFlag = styled.img`
     width: 160px;
     height: 80px;
     cursor: pointer;
-    border: 0
+    border: 0;
+
+    @media screen and (min-width: 768px) {
+        
+    }
 `;
 
 const StyleWrapper = styled.div`
@@ -58,5 +62,15 @@ const StyleWrapper = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    @media screen and (min-width: 768px) {
+        font-size: 150%;
+        .vocabulary-container {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     }
 `;

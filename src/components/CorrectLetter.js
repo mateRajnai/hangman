@@ -23,6 +23,14 @@ const StyleWrapper = styled.div`
     .correct-letter {
         font-size: 150%;
         width: 40%;
-        color: white;   
+        color: white; 
+    }
+
+    @media screen and (min-width: 768px) {
+        height: 35%;
+
+        .correct-letter {
+            font-size: 340%;
+        }
     }
 `;

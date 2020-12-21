@@ -24,4 +24,8 @@ const StyleWrapper = styled.div`
     height: 100%;
     display: flex;
     align-items: center;
+
+    @media screen and (min-width: 768px) {
+        flex: 3;
+    }
 `;

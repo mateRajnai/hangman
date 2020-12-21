@@ -41,4 +41,21 @@ const StyleWrapper = styled.div`
         height: 24px;
         color: #383961;
     }
+
+    @media screen and (min-width: 768px) {
+        input {
+            width: 4%;
+            height: 70%;
+            color: #383961;
+            font-size: 140%;
+            text-align: center;
+        }
+
+        button {
+            width: 6%;
+            height: 70%;
+            color: #383961;
+            font-size: 100%;
+        }
+    }
 `;

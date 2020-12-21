@@ -15,4 +15,9 @@ const StyleWrapper = styled.div`
     color: white;
     margin: 6px;
     font-size: 150%;
+
+    @media screen and (min-width: 768px) {
+        font-size: 270%;
+        margin: 2%;
+    }
 `;

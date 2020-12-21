@@ -37,4 +37,10 @@ const StyleWrapper = styled.div`
         padding: 10px;
         font-size: 140%;
     }
+
+    @media screen and (min-width: 768px) {
+        .link {
+            font-size: 180%;
+        }
+    }
 `;
