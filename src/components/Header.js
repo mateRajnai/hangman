@@ -35,5 +35,6 @@ const StyleWrapper = styled.div`
 
     .link {
         padding: 10px;
+        font-size: 140%;
     }
 `;
