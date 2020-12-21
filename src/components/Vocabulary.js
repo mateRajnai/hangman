@@ -20,10 +20,10 @@ const Vocabulary = () => {
             <div id="available-vocabularies" className="vocabulary-container">
                 <h2>Available vocabularies:</h2>
                 <button type="button" className="flag-button"  onClick={generateWord}>
-                    <StyledFlag src={englishFlag} alt="English vocabulary" data-vocabulary="english"></StyledFlag>
+                    <StyledFlag src={englishFlag} alt="English vocabulary" data-vocabulary="English"></StyledFlag>
                 </button>
                 <button type="button" className="flag-button" onClick={generateWord}>
-                    <StyledFlag src={germanFlag} alt="German vocabulary" data-vocabulary="german"></StyledFlag>
+                    <StyledFlag src={germanFlag} alt="German vocabulary" data-vocabulary="German"></StyledFlag>
                 </button>
             </div>
         </StyleWrapper>

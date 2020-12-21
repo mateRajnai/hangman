@@ -4,7 +4,7 @@ export const VocabularyContext = React.createContext();
 
 export const VocabularyProvider = (props) => {
 
-    const [vocabulary, setVocabulary] = useState("english");
+    const [vocabulary, setVocabulary] = useState("English");
     const [generatedWord, setGeneratedWord] = useState("a");
 
     const generateWord = (event) => {
@@ -12,10 +12,10 @@ export const VocabularyProvider = (props) => {
         setVocabulary(chosenVocabulary);
         let generatedWord;
         switch (chosenVocabulary) {
-            case "english":
+            case "English":
                 generatedWord = require('random-words')();
                 break;
-            case "german":
+            case "German":
                 generatedWord = require('random-noun-generator-german')();
                 break;
             default:
