@@ -5,7 +5,7 @@ export const VocabularyContext = React.createContext();
 export const VocabularyProvider = (props) => {
 
     const [vocabulary, setVocabulary] = useState("English");
-    const [generatedWord, setGeneratedWord] = useState("a");
+    const [generatedWord, setGeneratedWord] = useState(require('random-words')());
 
     const generateWord = (event) => {
         const chosenVocabulary = event.target.getAttribute("data-vocabulary") || vocabulary;

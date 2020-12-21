@@ -7,7 +7,7 @@ import { VocabularyContext } from '../context/VocabularyContext';
 const Drawing = () => {
 
     const {wrongLetters, isLastlyGuessedLetterWrong, setIsLastlyGuessedLetterWrong} = useContext(LettersContext);
-    const {isEndOfGame, setIsEndOfGame} = useContext(GameStatusContext);
+    const {isEndOfGame, setIsEndOfGame, isNewGame, setIsNewGame} = useContext(GameStatusContext);
     const {generatedWord} = useContext(VocabularyContext);
     const [indexOfDrawingParts, setIndexOfDrawingParts] = useState(0);
     const drawingParts = document.getElementsByClassName("drawing-part");
@@ -19,6 +19,7 @@ const Drawing = () => {
                 setIsEndOfGame(true);
                 setIsLastlyGuessedLetterWrong(false);
             } else {
+                console.log(indexOfDrawingParts);
                 setIndexOfDrawingParts(index => index + 1);
             }
         }
@@ -26,11 +27,14 @@ const Drawing = () => {
 
     
     useEffect(() => {
-        for (let i = 0; i < drawingParts.length; i++) {
-            drawingParts[i].classList.remove("draw");
+        if (isNewGame) {
+            for (let i = 0; i < drawingParts.length; i++) {
+                drawingParts[i].classList.remove("draw");
+            }
+            setIndexOfDrawingParts(0);
+            setIsNewGame(false);
         }
-        setIndexOfDrawingParts(0);
-    }, [generatedWord, drawingParts])
+    }, [generatedWord, drawingParts, isNewGame, setIsNewGame])
 
     return <StyleWrapper id="drawing" className="styled-div">
                 <svg height="250" width="100%" id="drawing-parts">
