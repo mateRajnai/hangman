@@ -13,8 +13,6 @@ const Drawing = () => {
     const drawingParts = document.getElementsByClassName("drawing-part");
     
     useEffect(() => {
-        console.log("first useEffect")
-
         if (!isEndOfGame && isLastlyGuessedLetterWrong) {
             drawingParts[indexOfDrawingParts].classList.add("draw");
             if (drawingParts[indexOfDrawingParts + 1] === undefined) {
