@@ -1,17 +1,19 @@
 import React, {useContext, useEffect} from 'react';
 import styled from 'styled-components';
-import {LettersContext} from '../context/LettersContext';
-import {GameStatusContext} from '../context/GameStatusContext';
 import {VocabularyContext} from '../context/VocabularyContext';
+import {GameStatusContext} from '../context/GameStatusContext';
 import {DrawingContext} from '../context/DrawingContext';
+import {LettersContext} from '../context/LettersContext';
 import {useLocation} from 'react-router-dom';
 
 const Drawing = () => {
 
-    const {wrongLetters, isLastlyGuessedLetterWrong, setIsLastlyGuessedLetterWrong} = useContext(LettersContext);
-    const {isEndOfGame, setIsEndOfGame} = useContext(GameStatusContext);
     const {generatedWord} = useContext(VocabularyContext);
-    const {drawingParts, indexOfDrawingParts, setIndexOfDrawingParts, previousWord} = useContext(DrawingContext);
+    const {isEndOfGame, setIsEndOfGame} = useContext(GameStatusContext);
+    const {drawingParts, indexOfDrawingParts, 
+        setIndexOfDrawingParts, previousWord} = useContext(DrawingContext);
+    const {wrongLetters, isLastlyGuessedLetterWrong, 
+        setIsLastlyGuessedLetterWrong} = useContext(LettersContext);
 
     let location = useLocation();
     let currentPath = location.pathname;
