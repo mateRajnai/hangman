@@ -6,7 +6,8 @@ import germanFlag from '../images/german_flag.png';
 
 const Vocabulary = () => {
 
-    const {generateWord, generatedWord, vocabulary, setWordBeforeVisitingVocabularies} = useContext(VocabularyContext);
+    const {generateWord, generatedWord, vocabulary, 
+        setWordBeforeVisitingVocabularies} = useContext(VocabularyContext);
 
     useEffect(() => {
         setWordBeforeVisitingVocabularies(generatedWord);
@@ -14,7 +15,6 @@ const Vocabulary = () => {
 
 
     useEffect(() => {
-
     }, [vocabulary])
 
     return (

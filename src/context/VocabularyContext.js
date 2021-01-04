@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {usePrevious} from '../hooks/usePrevious';
 
 export const VocabularyContext = React.createContext();
 
