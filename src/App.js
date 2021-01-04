@@ -4,9 +4,9 @@ import { BrowserRouter } from "react-router-dom";
 import Header from "./components/Header";
 import Content from './components/Content';
 import {VocabularyProvider} from "./context/VocabularyContext"
-import {LettersProvider} from "./context/LettersContext"
 import { GameStatusProvider } from './context/GameStatusContext';
 import { DrawingProvider } from './context/DrawingContext';
+import {LettersProvider} from "./context/LettersContext"
 
 function App() {
   return (
