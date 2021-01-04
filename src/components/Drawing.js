@@ -19,8 +19,6 @@ const Drawing = () => {
     let currentPath = location.pathname;
 
     useEffect(() => {
-        console.log(wordBeforeVisitingVocabularies)
-        console.log(generatedWord)
         return () => {
             setIsLastlyGuessedLetterWrong(false);
         }
@@ -64,7 +62,7 @@ const Drawing = () => {
     }, [currentPath])
 
     const redraw = () => {
-        if (currentPath = "/home" && wordBeforeVisitingVocabularies === generatedWord) {
+        if (currentPath === "/home" && wordBeforeVisitingVocabularies === generatedWord) {
             for (let i = 0; i < indexOfDrawingParts; i++) {
                 drawingParts[i].classList.add("draw");
             }
