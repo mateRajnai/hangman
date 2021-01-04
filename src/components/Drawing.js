@@ -8,10 +8,10 @@ import {useLocation} from 'react-router-dom';
 
 const Drawing = () => {
 
-    const {generatedWord} = useContext(VocabularyContext);
+    const {generatedWord, wordAfterVisitingVocabularies} = useContext(VocabularyContext);
     const {isEndOfGame, setIsEndOfGame} = useContext(GameStatusContext);
     const {drawingParts, indexOfDrawingParts, 
-        setIndexOfDrawingParts, previousWord} = useContext(DrawingContext);
+        setIndexOfDrawingParts} = useContext(DrawingContext);
     const {wrongLetters, isLastlyGuessedLetterWrong, 
         setIsLastlyGuessedLetterWrong} = useContext(LettersContext);
 
@@ -19,6 +19,8 @@ const Drawing = () => {
     let currentPath = location.pathname;
 
     useEffect(() => {
+        console.log(wordAfterVisitingVocabularies)
+        console.log(generatedWord)
         return () => {
             setIsLastlyGuessedLetterWrong(false);
         }
@@ -48,7 +50,7 @@ const Drawing = () => {
     }, [generatedWord])
 
     const clearDrawing = () => {
-        if (previousWord !== generatedWord) {
+        if (wordAfterVisitingVocabularies !== generatedWord) {
             for (let i = 0; i < drawingParts.length; i++) {
                 drawingParts[i].classList.remove("draw");
             setIndexOfDrawingParts(0);
@@ -62,7 +64,7 @@ const Drawing = () => {
     }, [currentPath])
 
     const redraw = () => {
-        if (currentPath = "/home" && previousWord === generatedWord) {
+        if (currentPath = "/home" && wordAfterVisitingVocabularies === generatedWord) {
             for (let i = 0; i < indexOfDrawingParts; i++) {
                 drawingParts[i].classList.add("draw");
             }

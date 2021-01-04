@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {usePrevious} from '../hooks/usePrevious';
 
 export const VocabularyContext = React.createContext();
 
@@ -6,6 +7,7 @@ export const VocabularyProvider = (props) => {
 
     const [vocabulary, setVocabulary] = useState("English");
     const [generatedWord, setGeneratedWord] = useState(require('random-words')());
+    let wordAfterVisitingVocabularies = usePrevious(generatedWord);
 
     const generateWord = (event) => {
         const chosenVocabulary = event.target.getAttribute("data-vocabulary") || vocabulary;
@@ -29,7 +31,8 @@ export const VocabularyProvider = (props) => {
         <VocabularyContext.Provider value={{
             generateWord,
             generatedWord,
-            vocabulary
+            vocabulary,
+            wordAfterVisitingVocabularies
         }}>
             {props.children}
         </VocabularyContext.Provider>
