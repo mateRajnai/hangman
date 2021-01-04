@@ -6,7 +6,8 @@ export const VocabularyProvider = (props) => {
 
     const [vocabulary, setVocabulary] = useState("English");
     const [generatedWord, setGeneratedWord] = useState(require('random-words')());
-
+    const [wordBeforeVisitingVocabularies, setWordBeforeVisitingVocabularies] = useState();
+    
     const generateWord = (event) => {
         const chosenVocabulary = event.target.getAttribute("data-vocabulary") || vocabulary;
         setVocabulary(chosenVocabulary);
@@ -29,7 +30,9 @@ export const VocabularyProvider = (props) => {
         <VocabularyContext.Provider value={{
             generateWord,
             generatedWord,
-            vocabulary
+            vocabulary,
+            wordBeforeVisitingVocabularies, 
+            setWordBeforeVisitingVocabularies
         }}>
             {props.children}
         </VocabularyContext.Provider>

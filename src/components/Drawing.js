@@ -1,18 +1,36 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useEffect} from 'react';
 import styled from 'styled-components';
-import {LettersContext} from '../context/LettersContext';
+import {VocabularyContext} from '../context/VocabularyContext';
 import {GameStatusContext} from '../context/GameStatusContext';
-import { VocabularyContext } from '../context/VocabularyContext';
+import {DrawingContext} from '../context/DrawingContext';
+import {LettersContext} from '../context/LettersContext';
+import {useLocation} from 'react-router-dom';
 
 const Drawing = () => {
 
-    const {wrongLetters, isLastlyGuessedLetterWrong, setIsLastlyGuessedLetterWrong} = useContext(LettersContext);
+    const {generatedWord, wordBeforeVisitingVocabularies} = useContext(VocabularyContext);
     const {isEndOfGame, setIsEndOfGame} = useContext(GameStatusContext);
-    const {generatedWord} = useContext(VocabularyContext);
-    const [indexOfDrawingParts, setIndexOfDrawingParts] = useState(0);
-    const drawingParts = document.getElementsByClassName("drawing-part");
-    
+    const {drawingParts, indexOfDrawingParts, 
+        setIndexOfDrawingParts} = useContext(DrawingContext);
+    const {wrongLetters, isLastlyGuessedLetterWrong, 
+        setIsLastlyGuessedLetterWrong} = useContext(LettersContext);
+
+    let location = useLocation();
+    let currentPath = location.pathname;
+
     useEffect(() => {
+        return () => {
+            setIsLastlyGuessedLetterWrong(false);
+        }
+    }, [])
+    
+
+    useEffect(() => {
+        draw();
+    }, [drawingParts, wrongLetters, isLastlyGuessedLetterWrong, 
+        isEndOfGame, setIsEndOfGame, setIsLastlyGuessedLetterWrong])
+
+    const draw = () => {
         if (!isEndOfGame && isLastlyGuessedLetterWrong) {
             drawingParts[indexOfDrawingParts].classList.add("draw");
             if (drawingParts[indexOfDrawingParts + 1] === undefined) {
@@ -22,15 +40,36 @@ const Drawing = () => {
                 setIndexOfDrawingParts(index => index + 1);
             }
         }
-    }, [drawingParts, wrongLetters, isLastlyGuessedLetterWrong, isEndOfGame, setIsEndOfGame, setIsLastlyGuessedLetterWrong])
+    }
 
-    
+
     useEffect(() => {
-        for (let i = 0; i < drawingParts.length; i++) {
-            drawingParts[i].classList.remove("draw");
+        clearDrawing();
+    }, [generatedWord])
+
+    const clearDrawing = () => {
+        if (wordBeforeVisitingVocabularies !== generatedWord) {
+            for (let i = 0; i < drawingParts.length; i++) {
+                drawingParts[i].classList.remove("draw");
+            setIndexOfDrawingParts(0);
+            }
         }
-        setIndexOfDrawingParts(0);
-    }, [generatedWord, drawingParts])
+    }
+    
+
+    useEffect(() => {
+        redraw();
+    }, [currentPath])
+
+    const redraw = () => {
+        if (currentPath === "/home" && wordBeforeVisitingVocabularies === generatedWord) {
+            for (let i = 0; i < indexOfDrawingParts; i++) {
+                drawingParts[i].classList.add("draw");
+            }
+            setIndexOfDrawingParts(indexOfDrawingParts);
+        }
+    } 
+
 
     return <StyleWrapper id="drawing" className="styled-div">
                 <svg height="250" width="100%" id="drawing-parts">
