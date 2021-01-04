@@ -6,6 +6,7 @@ import Content from './components/Content';
 import {VocabularyProvider} from "./context/VocabularyContext"
 import {LettersProvider} from "./context/LettersContext"
 import { GameStatusProvider } from './context/GameStatusContext';
+import { DrawingProvider } from './context/DrawingContext';
 
 function App() {
   return (
@@ -13,10 +14,12 @@ function App() {
         <BrowserRouter>
             <VocabularyProvider>
               <GameStatusProvider>
-                <LettersProvider>
-                  <Header/>
-                  <Content/>
-                </LettersProvider>
+                <DrawingProvider>
+                  <LettersProvider>
+                    <Header/>
+                    <Content/>
+                  </LettersProvider>
+                </DrawingProvider>
               </GameStatusProvider>
             </VocabularyProvider>
         </BrowserRouter>
