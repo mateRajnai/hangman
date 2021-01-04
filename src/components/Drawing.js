@@ -62,7 +62,7 @@ const Drawing = () => {
     }, [currentPath])
 
     const redraw = () => {
-        if (currentPath === "/home" && wordBeforeVisitingVocabularies === generatedWord) {
+        if (currentPath === "/" && wordBeforeVisitingVocabularies === generatedWord) {
             for (let i = 0; i < indexOfDrawingParts; i++) {
                 drawingParts[i].classList.add("draw");
             }
