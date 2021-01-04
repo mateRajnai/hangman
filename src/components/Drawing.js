@@ -17,6 +17,12 @@ const Drawing = () => {
     let currentPath = location.pathname;
 
     useEffect(() => {
+        return () => {
+            setIsLastlyGuessedLetterWrong(false);
+        }
+    }, [])
+
+    useEffect(() => {
         if (!isEndOfGame && isLastlyGuessedLetterWrong) {
             drawingParts[indexOfDrawingParts].classList.add("draw");
             if (drawingParts[indexOfDrawingParts + 1] === undefined) {
@@ -25,9 +31,6 @@ const Drawing = () => {
             } else {
                 setIndexOfDrawingParts(index => index + 1);
             }
-        }
-        return () => {
-            setIsLastlyGuessedLetterWrong(false);
         }
     }, [drawingParts, wrongLetters, isLastlyGuessedLetterWrong, isEndOfGame, setIsEndOfGame, setIsLastlyGuessedLetterWrong])
 
