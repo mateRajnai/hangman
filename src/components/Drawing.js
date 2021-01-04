@@ -1,17 +1,21 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useEffect} from 'react';
 import styled from 'styled-components';
 import {LettersContext} from '../context/LettersContext';
 import {GameStatusContext} from '../context/GameStatusContext';
-import { VocabularyContext } from '../context/VocabularyContext';
+import {VocabularyContext} from '../context/VocabularyContext';
+import {DrawingContext} from '../context/DrawingContext';
+import {useLocation} from 'react-router-dom';
 
 const Drawing = () => {
 
     const {wrongLetters, isLastlyGuessedLetterWrong, setIsLastlyGuessedLetterWrong} = useContext(LettersContext);
     const {isEndOfGame, setIsEndOfGame} = useContext(GameStatusContext);
     const {generatedWord} = useContext(VocabularyContext);
-    const [indexOfDrawingParts, setIndexOfDrawingParts] = useState(0);
-    const drawingParts = document.getElementsByClassName("drawing-part");
-    
+    const {drawingParts, indexOfDrawingParts, setIndexOfDrawingParts, previousWord} = useContext(DrawingContext);
+
+    let location = useLocation();
+    let currentPath = location.pathname;
+
     useEffect(() => {
         if (!isEndOfGame && isLastlyGuessedLetterWrong) {
             drawingParts[indexOfDrawingParts].classList.add("draw");
@@ -22,15 +26,39 @@ const Drawing = () => {
                 setIndexOfDrawingParts(index => index + 1);
             }
         }
+        return () => {
+            setIsLastlyGuessedLetterWrong(false);
+        }
     }, [drawingParts, wrongLetters, isLastlyGuessedLetterWrong, isEndOfGame, setIsEndOfGame, setIsLastlyGuessedLetterWrong])
 
     
     useEffect(() => {
-        for (let i = 0; i < drawingParts.length; i++) {
-            drawingParts[i].classList.remove("draw");
+        clearDrawing();
+    }, [generatedWord])
+
+    const clearDrawing = () => {
+        if (previousWord !== generatedWord) {
+            for (let i = 0; i < drawingParts.length; i++) {
+                drawingParts[i].classList.remove("draw");
+            setIndexOfDrawingParts(0);
+            }
         }
-        setIndexOfDrawingParts(0);
-    }, [generatedWord, drawingParts])
+    }
+    
+
+    useEffect(() => {
+        redraw();
+    }, [currentPath])
+
+    const redraw = () => {
+        if (currentPath = "/home" && previousWord === generatedWord) {
+            for (let i = 0; i < indexOfDrawingParts; i++) {
+                drawingParts[i].classList.add("draw");
+            }
+            setIndexOfDrawingParts(indexOfDrawingParts);
+        }
+    } 
+
 
     return <StyleWrapper id="drawing" className="styled-div">
                 <svg height="250" width="100%" id="drawing-parts">
