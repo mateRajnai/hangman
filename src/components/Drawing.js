@@ -23,8 +23,14 @@ const Drawing = () => {
             setIsLastlyGuessedLetterWrong(false);
         }
     }, [])
+    
 
     useEffect(() => {
+        draw();
+    }, [drawingParts, wrongLetters, isLastlyGuessedLetterWrong, 
+        isEndOfGame, setIsEndOfGame, setIsLastlyGuessedLetterWrong])
+
+    const draw = () => {
         if (!isEndOfGame && isLastlyGuessedLetterWrong) {
             drawingParts[indexOfDrawingParts].classList.add("draw");
             if (drawingParts[indexOfDrawingParts + 1] === undefined) {
@@ -34,9 +40,9 @@ const Drawing = () => {
                 setIndexOfDrawingParts(index => index + 1);
             }
         }
-    }, [drawingParts, wrongLetters, isLastlyGuessedLetterWrong, isEndOfGame, setIsEndOfGame, setIsLastlyGuessedLetterWrong])
+    }
 
-    
+
     useEffect(() => {
         clearDrawing();
     }, [generatedWord])
