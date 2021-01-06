@@ -5,7 +5,7 @@ import {LettersContext} from '../../context/LettersContext';
 const GuessedLetter = () => {
 
     const [letter, setLetter] = useState("");
-    const {checkGuessedLetterWasAlreadyGuessed} = useContext(LettersContext);
+    const {guessLetter} = useContext(LettersContext);
 
     return (
         <StyleWrapper id="guessed-letter" className="styled-div">
@@ -15,7 +15,7 @@ const GuessedLetter = () => {
                 <button type="button" 
                         data-guessed-letter={letter} 
                         onClick={e => {
-                                checkGuessedLetterWasAlreadyGuessed(e); 
+                                guessLetter(e); 
                                 setLetter("");
                                 }} 
                         disabled={letter.length !== 1}>Guess letter!</button>

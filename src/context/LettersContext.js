@@ -10,7 +10,7 @@ export const LettersProvider = (props) => {
     const [wrongLetters, setWrongLetters] = useState([]);
     const [isLastlyGuessedLetterWrong, setIsLastlyGuessedLetterWrong] = useState();
 
-    const checkGuessedLetterWasAlreadyGuessed = (e) => {
+    const guessLetter = (e) => {
         const guessedLetter = e.target.getAttribute("data-guessed-letter");
         const isAlreadyGuessed = wrongLetters.includes(guessedLetter) || correctLetters.includes(guessedLetter);
         if (!isAlreadyGuessed) 
@@ -57,7 +57,7 @@ export const LettersProvider = (props) => {
 
     return (
         <LettersContext.Provider value={{
-            checkGuessedLetterWasAlreadyGuessed,
+            guessLetter,
             correctLetters,
             wrongLetters,
             isLastlyGuessedLetterWrong,
