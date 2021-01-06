@@ -25,12 +25,8 @@ const Drawing = () => {
     }, [])
     
 
+    // draw
     useEffect(() => {
-        draw();
-    }, [drawingParts, wrongLetters, isLastlyGuessedLetterWrong, 
-        isEndOfGame, setIsEndOfGame, setIsLastlyGuessedLetterWrong])
-
-    const draw = () => {
         if (!isEndOfGame && isLastlyGuessedLetterWrong) {
             drawingParts[indexOfDrawingParts].classList.add("draw");
             if (drawingParts[indexOfDrawingParts + 1] === undefined) {
@@ -40,35 +36,30 @@ const Drawing = () => {
                 setIndexOfDrawingParts(index => index + 1);
             }
         }
-    }
+    }, [drawingParts, wrongLetters, isLastlyGuessedLetterWrong, 
+        isEndOfGame, setIsEndOfGame, setIsLastlyGuessedLetterWrong])
 
 
+    // clear drawing
     useEffect(() => {
-        clearDrawing();
-    }, [generatedWord])
-
-    const clearDrawing = () => {
         if (wordBeforeVisitingVocabularies !== generatedWord) {
             for (let i = 0; i < drawingParts.length; i++) {
                 drawingParts[i].classList.remove("draw");
             setIndexOfDrawingParts(0);
             }
         }
-    }
+    }, [generatedWord])
     
 
+    // redraw
     useEffect(() => {
-        redraw();
-    }, [currentPath])
-
-    const redraw = () => {
         if (currentPath === "/" && wordBeforeVisitingVocabularies === generatedWord) {
             for (let i = 0; i < indexOfDrawingParts; i++) {
                 drawingParts[i].classList.add("draw");
             }
             setIndexOfDrawingParts(indexOfDrawingParts);
         }
-    } 
+    }, [currentPath])
 
 
     return <StyleWrapper id="drawing" className="styled-div">
